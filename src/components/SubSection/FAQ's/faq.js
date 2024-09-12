@@ -27,7 +27,7 @@ function Faq() {
   return (
     <div>
       <div className='faq-section'>
-      <h2 className='Faq-heading'><span>FAQs</span> about New York</h2>
+      <h2 className='Faq-heading'><span>FAQs</span>about New York</h2>
       <div>
       <Collapse defaultActiveKey={['1']} onChange={onChange} items={items} />
       </div>
