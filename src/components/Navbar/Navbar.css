@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: Arial, sans-serif;
+  }
+.navbar-logo{
+  margin-left: 3%;
+}  
+  .navbar-logo .logo {
+    height: 50px;
+  }
+ .navbar-nav{
+  margin-right: 3%;
+ } 
+  .navbar-nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .navbar-nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  
+  .navbar-nav ul li a.active {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  .login-btn {
+    background-image:linear-gradient(to right, #0A2F42, #1978A8); ;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #01475c;
+  }
+  

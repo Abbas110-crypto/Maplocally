@@ -1,0 +1,11 @@
+
+.Faq-heading{
+  text-align: left;
+  color:black;
+  font-size: 25px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.Faq-heading span{
+    color: orange;
+}
