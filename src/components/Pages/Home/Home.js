@@ -3,6 +3,8 @@ import './Home.css';
 import { Input } from 'antd';
 import Feedback from '../../SubSection/Feedback/Feedback';
 import Faq from '../../SubSection/FAQ\'s/faq';
+import MemorablePlace from '../../SubSection/MemorablePlace/MemorablePlace';
+
 const { Search } = Input;
 
 
@@ -19,6 +21,7 @@ function Home() {
         </div>
         <Feedback />
         <Faq />
+        <MemorablePlace />
       </div>
     </div>
   )

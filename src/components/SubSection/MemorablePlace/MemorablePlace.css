@@ -1,0 +1,24 @@
+
+.memorable-heading {
+    text-align: left;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 25px;
+    margin-left: 0;
+}
+.memorable-heading span{
+    color: orange;
+}
+.blog{
+    display: flex;
+}
+.blog-content{
+    margin-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.blog-heading{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1%;
+}

@@ -1,40 +1,58 @@
-import React from 'react';
-import './faq.css';
+import React, { useState } from 'react';
 import { Collapse } from 'antd';
+import './faq.css';  // CSS for custom styling
 
-const text = `New York City is known for landmarks like the Statue of Liberty and Times Square, its cultural diversity, Broadway, as a global financial hub, iconic food, museums, and the vibrant city skyline.`;
-const items = [
+const { Panel } = Collapse;
+
+const faqs = [
   {
-    key: '1',
-    label: 'What is New York City best known for?',
-    children: <p>{text}</p>,
+    question: 'What is React?',
+    answer: 'React is a JavaScript library for building user interfaces.'
   },
   {
-    key: '2',
-    label: 'When is the best time to visit New York?',
-    children: <p>{text}</p>,
+    question: 'What is Ant Design?',
+    answer: 'Ant Design is a React UI framework that offers various components.'
   },
-  {
-    key: '3',
-    label: 'Where is the best location for tourists to stay in New York?',
-    children: <p>{text}</p>,
-  },
+  
 ];
-function Faq() {
-  const onChange = (key) => {
-    console.log(key);
+
+const FaqSection = () => {
+  const [activeKey, setActiveKey] = useState(null);
+
+  const handleCollapseChange = (key) => {
+    setActiveKey(key);
   };
+
   return (
-    <div>
-      <div className='faq-section'>
-      <h2 className='Faq-heading'><span>FAQs</span>about New York</h2>
-      <div>
-      <Collapse defaultActiveKey={['1']} onChange={onChange} items={items} />
-      </div>
-
-</div>
+    <div className="faq-section">
+      <h2 className='faq-heading'><span>FAQs</span> about New York</h2>
+      <Collapse
+        accordion
+        activeKey={activeKey}
+        className='faq-dropdown'
+        onChange={handleCollapseChange}
+        expandIconPosition="right"
+        expandIcon={({ isActive }) => (
+          <img
+            src="https://i.ibb.co/T4cKJSw/Group-48101001-1.png" // Replace with your icon URL or path
+            alt="dropdown-icon"
+            style={{ 
+              width: '25px', 
+              height: '25px', 
+              transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
+              transition: 'transform 0.3s ease' 
+            }}  // Rotates icon if needed
+          />
+        )}
+      >
+        {faqs.map((faq, index) => (
+          <Panel header={faq.question} key={index}>
+            <p>{faq.answer}</p>
+          </Panel>
+        ))}
+      </Collapse>
     </div>
-  )
-}
+  );
+};
 
-export default Faq;
+export default FaqSection;
