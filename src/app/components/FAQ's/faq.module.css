@@ -1,0 +1,40 @@
+.faqsection {
+  background-color: white;
+}
+.faqheading{
+  text-align: left;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 25px;
+}
+.faqheading span{
+  color: orange;
+}
+.ant-collapse-header {
+  margin: 0 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+}
+
+.ant-collapse-content-box {
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding: 12px;
+}
+
+.ant-collapse-item {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ant-collapse-header .anticon {
+  font-size: 16px;
+  color: #1890ff;
+}

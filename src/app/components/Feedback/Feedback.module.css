@@ -1,0 +1,78 @@
+.testimonialssection {
+    margin-top: 5%;
+    width: 1300px;    
+  }
+  
+  .testimonialssection h2 {
+    text-align: left;
+    margin-bottom: 3%;
+    font-size: 25px;
+  }
+  
+  .highlight {
+    color: orange;
+  }
+  
+  .testimonialscontainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+  }
+  
+  .testimonialcard {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #c2b9b9;    
+    min-width: 450px;
+    box-sizing: border-box;
+  }
+  
+  .testimonialheader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .testimonialavatar {
+    border-radius: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .testimonialcontent{
+    margin-left: 3%;
+    margin-right: 0;
+  }
+  .testimonialreview {
+    font-size: 0.9em;
+    line-height: 1.4;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .testimonialdesc{
+    margin-bottom: 10px;
+  }
+  .testimonialrating {
+    color: gold;
+  }
+  
+  /* Custom scrollbar styling */
+  .testimonials-container::-webkit-scrollbar {
+    display: none;
+    width: 5px;
+    height: 8px;
+  }
+  
+  .testimonials-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  .testimonials-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  

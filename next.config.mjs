@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {}
 
-export default nextConfig;
+export const images = {
+    domains: ['tinypic.host', "i.ibb.co"],
+};
+  
+  

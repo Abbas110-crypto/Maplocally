@@ -1,0 +1,45 @@
+.footer-section{
+    margin: 0;
+    background: #026880;
+}
+.footer-logo{
+    margin-left: 5%;
+    margin-top: 2%;
+}
+.divider{
+    width:1200px;
+    display: flex;
+    justify-content: center;
+    background-color: #c2b9b9;
+    height: 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    
+}
+.menu-icon{
+   display: flex;
+   justify-content: space-around;
+}
+.menu{
+    display: flex;
+    justify-content: left;
+}
+.icon-main{
+    margin: 0;
+}
+.menu-main{
+    margin: 0;
+}
+.menu li{
+    list-style-type: none;
+    color: #fff;
+    padding-left: 5%;    
+}
+.icon-menu{
+    display: flex;
+}
+.icon-menu li{
+    list-style-type: none;
+}

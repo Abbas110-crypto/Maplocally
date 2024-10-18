@@ -1,0 +1,42 @@
+.main{
+    margin-top: 5%;
+}
+.herosection{
+    background: url('https://i.ibb.co/6n0yBq0/hero.png');
+    background-attachment: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    margin: 0;
+    width: 1240px;
+    height: 500px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.heading{
+    padding-top: 13%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 1%;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Mona Sans', sans-serif;
+
+}
+.paragraph{
+    color: #fff;
+    text-align: center;
+    padding-left: 30%;
+    padding-right: 30%;
+    line-height: 20px; 
+    font-family: 'Mona Sans', sans-serif;   
+}
+.searchbar{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 80px;
+    font-family: 'Mona Sans', sans-serif;
+
+}
