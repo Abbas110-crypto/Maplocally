@@ -28,7 +28,7 @@ const testimonials = [
     location: "Mexico, USA",
     review: "Ive been using map locally for years now...",
     desc:"Its very convenient to have this all around pass! It was our first time visiting New York and it is a must have to get this pass as it will save you time, money, and effort. Using this pass, my mom and I were able to visit The Rockefeller Center....",
-    rating: 5,
+    rating: 4,
   },
 ];
 
@@ -43,7 +43,7 @@ const Feedback = () => {
               <img 
                 src={`https://i.pravatar.cc/50?img=${index + 1}`} 
                 alt={`${testimonial.name}'s profile`} 
-                className="testimonial-avatar" 
+                className={styles.testimonialavatar} 
               />
               <div className={styles.testimonialcontent}>
                 <h4 className={styles.testimonialname}>{testimonial.name}</h4>

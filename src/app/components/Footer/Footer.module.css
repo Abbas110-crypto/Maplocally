@@ -1,8 +1,8 @@
-.footer-section{
+.footersection{
     margin: 0;
     background: #026880;
 }
-.footer-logo{
+.footerlogo{
     margin-left: 5%;
     margin-top: 2%;
 }
@@ -18,7 +18,7 @@
     margin-bottom: 2%;
     
 }
-.menu-icon{
+.menuicon{
    display: flex;
    justify-content: space-around;
 }
@@ -26,10 +26,10 @@
     display: flex;
     justify-content: left;
 }
-.icon-main{
+.iconmain{
     margin: 0;
 }
-.menu-main{
+.menumain{
     margin: 0;
 }
 .menu li{
@@ -37,9 +37,9 @@
     color: #fff;
     padding-left: 5%;    
 }
-.icon-menu{
+.iconmenu{
     display: flex;
 }
-.icon-menu li{
+.iconmenu li{
     list-style-type: none;
 }

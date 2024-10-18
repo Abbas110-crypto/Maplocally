@@ -14,6 +14,10 @@ const faqs = [
     question: 'What is Ant Design?',
     answer: 'Ant Design is a React UI framework that offers various components.'
   },
+  {
+    question: 'What is Ant Design?',
+    answer: 'Ant Design is a React UI framework that offers various components.'
+  },
   
 ];
 

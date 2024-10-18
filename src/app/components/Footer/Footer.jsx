@@ -1,18 +1,18 @@
 import React from 'react';
-import './Footer.css';
-
-function Footer() {
+import styles from './Footer.module.css';
+import Image from 'next/image';
+const Footer = () => {
   return (
-    <div className='footer-section'>
+    <div className={styles.footersection}>
       <img 
       src="https://i.ibb.co/g918t1D/Mask-group.png" 
       alt= "footer"
-      className='footer-logo'
+      className={styles.footerlogo}
       />
-      <div className='divider'></div>
-      <div className='menu-icon'>
-        <div className='menu-main'>
-          <ul className='menu'>
+      <div className={styles.divider}></div>
+      <div className={styles.menuicon}>
+        <div className={styles.menumain}>
+          <ul className={styles.menu}>
             <li>About Secret NYC</li>
             <li>Advertise with us</li>
             <li>List your event</li>
@@ -20,34 +20,42 @@ function Footer() {
             <li>Contact</li>
           </ul>
         </div>
-        <div className='icon-main'>
-          <ul className='icon-menu'>
+        <div className={styles.iconmain}>
+          <ul className={styles.iconmenu}>
             <li>
-              <img 
+              <Image 
               src='https://i.ibb.co/9YpFwRj/instagram-3.png'
+              width={32}
+              height={32}
               alt='instagram'
-              className='icon'
+              className={styles.icon}
               />
             </li>
             <li>
-              <img 
+              <Image 
               src='https://i.ibb.co/CMbHJKW/twitter-1.png'
+              width={32}
+              height={32}
               alt='Twitter'
-              className='icon'
+              className={styles.icon}
               />
             </li>
             <li>
-              <img 
+              <Image 
               src='https://i.ibb.co/bBMTvBN/youtube.png'
+              width={32}
+              height={32}
               alt='instagram'
-              className='icon'
+              className={styles.icon}
               />
             </li>
             <li>
-              <img 
+              <Image 
               src='https://i.ibb.co/DCQdS09/linkedin.png'
+              width={32}
+              height={32}
               alt='instagram'
-              className='icon'
+              className={styles.icon}
               />
             </li>
           </ul>
