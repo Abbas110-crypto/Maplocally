@@ -11,7 +11,7 @@ const Hero =() =>{
   return (
     <div className={styles.main}>
       <div className={styles.herosection}>
-        <h1 className={styles.heading}>Discover dreams in New York's Iconic Spots</h1>
+        <h1 className={styles.heading}>Discover dreams in New York&apos;s Iconic Spots</h1>
         <p className={styles.paragraph}>like the Empire State Buliding, Ouggenheim Museum, ond Michelin-starred Jean Georges</p>
         <div className={styles.searchbar}>
         <Search placeholder="Search for any destination" onSearch={onSearch} enterButton  className={styles.search} />
