@@ -28,7 +28,7 @@ const PostSection = () => {
 
   return (
     <div className={styles.postSection}>
-      <h2 className={styles.title}>The Best of New York's</h2>
+      <h2 className={styles.title}>The Best of New York&apos;s</h2>
       <PostRow posts={posts1} />
       <PostRow posts={posts2} />
       <PostRow posts={posts3} /> {/* Add more PostRow components as needed */}
