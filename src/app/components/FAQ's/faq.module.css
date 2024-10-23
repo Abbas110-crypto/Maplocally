@@ -16,3 +16,10 @@
   color: bisque;
   width: 80% !important;
 }
+.panel{
+  background-color: white;
+
+}
+.question{
+  font-weight: 500;
+}

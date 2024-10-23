@@ -18,7 +18,7 @@ const faqs = [
     question: 'What is Ant Design?',
     answer: 'Ant Design is a React UI framework that offers various components.'
   },
-  
+
 ];
 
 const FaqSection = () => {
@@ -41,19 +41,21 @@ const FaqSection = () => {
           <img
             src="https://i.ibb.co/T4cKJSw/Group-48101001-1.png" // Replace with your icon URL or path
             alt="dropdown-icon"
-            style={{ 
-              width: '25px', 
-              height: '25px', 
+            style={{
+              width: '25px',
+              height: '25px',
               transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
-              transition: 'transform 0.3s ease' 
+              transition: 'transform 0.3s ease'
             }}  // Rotates icon if needed
           />
         )}
       >
         {faqs.map((faq, index) => (
-          <Panel header={faq.question} key={index}>
-            <p>{faq.answer}</p>
-          </Panel>
+
+        <Panel className={styles.panel} header={<span className={styles.question}>{faq.question}</span>} key={index}>
+          <p>{faq.answer}</p>
+        </Panel>
+
         ))}
       </Collapse>
     </div>

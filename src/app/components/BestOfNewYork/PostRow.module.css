@@ -1,0 +1,175 @@
+.cardRowContainer {
+    position: relative;
+    width: 100%;
+    /* Ensures the arrows are positioned relative to the container */
+  }
+  
+  .cardRow {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    position: relative;
+    padding: 10px; /* Add padding for spacing */
+    gap: 10px; /* Add a gap between cards */
+
+    /* Hide scrollbars for Chrome, Safari, and Edge */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .cardRow::-webkit-scrollbar {
+    display: none; /* Hide scrollbars in Chrome, Safari, and Edge */
+  }
+  
+  .card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+  }
+  
+  .image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: #333;
+  }
+  
+  .tagContainer {
+    margin: 10px 0;
+  }
+  
+  .tag {
+    color: #4c8ca5;
+    border-color: #4c8ca5;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 2px 8px; /* Ensure tag padding looks good */
+  }
+  
+  .price {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+  }
+  
+  /* Arrow button styles */
+  .arrowButton {
+    background-color: white;
+    opacity: 0.4;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    margin-right: 350px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  
+  .arrowButton.left {
+    left: 10px;
+  }
+  
+  .arrowButton.right {
+    right: 30px;
+  }
+  
+  .arrowButton:hover {
+    background-color: white;
+    opacity: 0.6;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 1200px) {
+    .card {
+      min-width: 250px; /* Adjust card size for smaller screens */
+    }
+  
+    .cardTitle {
+      font-size: 16px;
+    }
+  
+    .price {
+      font-size: 14px;
+    }
+  
+    .arrowButton {
+      font-size: 20px;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      min-width: 200px; /* Smaller card size for tablets */
+    }
+  
+    .cardTitle {
+      font-size: 14px;
+    }
+  
+    .price {
+      font-size: 12px;
+    }
+  
+    .arrowButton {
+      font-size: 18px;
+      padding: 6px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cardRow {
+      gap: 5px; /* Reduce gap for mobile screens */
+    }
+  
+    .card {
+      min-width: 150px; /* Smaller card size for mobile */
+    }
+  
+    .image {
+      height: 100px; /* Adjust image height for mobile */
+    }
+  
+    .cardTitle {
+      font-size: 12px;
+      margin: 10px 0 5px;
+    }
+  
+    .price {
+      font-size: 10px;
+    }
+  
+    .tag {
+      font-size: 10px; /* Adjust tag size for mobile */
+      padding: 1px 4px; /* Reduce padding for mobile */
+    }
+  
+    .arrowButton {
+      font-size: 16px;
+      padding: 4px;
+    }
+  }
