@@ -9,7 +9,7 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-behavior: smooth;
-    max-width: 100%;
+    max-width: 95%;
     position: relative;
     padding: 10px; /* Add padding for spacing */
     gap: 10px; /* Add a gap between cards */
@@ -27,21 +27,21 @@
     min-width: 300px;
     flex: 0 0 auto;
     border: none;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* Keeps rounded corners for the card */
+    overflow: hidden; /* Ensures image fits inside rounded corners */
     padding: 0;
   }
   
   .image {
     width: 100%;
+    display: block;
     height: 150px;
-    object-fit: cover;
-    margin: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom: 2px solid #f0f0f0;
+    margin: 0; /* Ensure no margin around the image */
+    padding: 0; /* Ensure no padding inside the image */
+    object-fit:fill; /* Cover entire area */
+    border-radius: 0; /* Remove any border-radius on the image itself */
   }
+  
   
   .card:hover {
     transform: translateY(-5px);
@@ -50,7 +50,6 @@
   
   .cardTitle {
     font-size: 18px;
-    margin: 15px 0 10px;
     color: #333;
   }
   

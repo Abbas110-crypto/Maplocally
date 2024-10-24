@@ -8,16 +8,17 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 8%;
   max-width: 1200px;
-  height: 400px; /* Make height flexible for better responsiveness */
+  height: 450px; /* Make height flexible for better responsiveness */
   position: relative;
   overflow: hidden; /* Hide any overflow caused by image adjustments */
-  padding: 0 3%; /* Adjust the padding for better centering */
 }
 
 .heroImage {
+  margin-top: -15px;
   width: 100%;
+  /* border-radius: 10px; */
   height: 100%;
   object-fit: cover;
   position: absolute;

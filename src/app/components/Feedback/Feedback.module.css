@@ -35,14 +35,17 @@
 
 .testimonialheader {
   display: flex;
-  align-items: center;
+  align-items: left;
   margin-bottom: 10px;
 }
 
 .testimonialavatar {
   border-radius: 50%;
+  margin: 0;
 }
-
+.testimoniallocation{
+  color: rgb(45, 175, 250);
+}
 .testimonialcontent {
   margin-left: 3%;
 }

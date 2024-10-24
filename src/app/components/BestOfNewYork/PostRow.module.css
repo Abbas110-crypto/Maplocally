@@ -1,6 +1,7 @@
 .cardRowContainer {
     position: relative;
-    width: 100%;
+    width: 85%;
+    margin-left: 10px;
     /* Ensures the arrows are positioned relative to the container */
   }
   
@@ -50,7 +51,7 @@
   
   .cardTitle {
     font-size: 18px;
-    margin: 15px 0 10px;
+    /* margin: 15px 0 10px; */
     color: #333;
   }
   
@@ -94,7 +95,7 @@
   }
   
   .arrowButton.right {
-    right: 30px;
+    right: -300px;
   }
   
   .arrowButton:hover {

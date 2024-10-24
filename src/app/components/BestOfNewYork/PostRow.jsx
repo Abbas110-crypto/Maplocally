@@ -35,13 +35,13 @@ const PostRow = ({ posts }) => {
 
   const scrollLeft = () => {
     if (rowRef.current) {
-      rowRef.current.scrollBy({ left: -150, behavior: 'smooth' }); // Scroll left by 150 pixels
+      rowRef.current.scrollBy({ left: -300, behavior: 'smooth' }); // Scroll left by 310 pixels
     }
   };
 
   const scrollRight = () => {
     if (rowRef.current) {
-      rowRef.current.scrollBy({ left: 150, behavior: 'smooth' }); // Scroll right by 150 pixels
+      rowRef.current.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll right by 310 pixels
     }
   };
 

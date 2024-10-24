@@ -12,11 +12,11 @@ function Post() {
   return (
     // <SidebarProvider> // Commented out SidebarProvider wrapper
       <Layout className={styles.mainSection}>
-        <Sider width={300} style={{ padding: '20px', background: '#fff' }}>
+        <Sider width={350} style={{ padding: '20px', background: '#fff' }}>
           <Sidebar />
         </Sider>
         <Layout className={styles.mainSection} style={{ padding: '20px' }}>
-          <Content>
+          <Content width={800}>
             <PostSection />
           </Content>
         </Layout>
