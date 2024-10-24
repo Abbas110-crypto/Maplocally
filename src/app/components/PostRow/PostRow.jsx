@@ -75,6 +75,7 @@ const PostRow = ({ posts }) => {
         {posts.map((post) => (
           <Card key={post.id} className={styles.card}>
             <img src={post.img} alt={post.title} className={styles.image} />
+            <p className={styles.description}>{post.description}</p> {/* New description element */}
             <h3 className={styles.cardTitle}>{post.title}</h3>
             <div className={styles.tagContainer}>
               {post.tags.map((tag, index) => (

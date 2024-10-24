@@ -9,9 +9,10 @@
 }
 
 .title {
-  font-size: 24px;
+  font-size: 22px;
   font-family: 'Mona Sans', sans-serif;
-  margin-bottom: 0;
+  margin-bottom: -10px;
+  margin-left: 40px;
   color: #333;
   text-align: left;
 

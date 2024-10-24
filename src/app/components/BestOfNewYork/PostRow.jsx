@@ -35,13 +35,13 @@ const PostRow = ({ posts }) => {
 
   const scrollLeft = () => {
     if (rowRef.current) {
-      rowRef.current.scrollBy({ left: -300, behavior: 'smooth' }); // Scroll left by 310 pixels
+      rowRef.current.scrollBy({ left: -300, behavior: 'smooth' }); // Scroll left by 300 pixels
     }
   };
 
   const scrollRight = () => {
     if (rowRef.current) {
-      rowRef.current.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll right by 310 pixels
+      rowRef.current.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll right by 300 pixels
     }
   };
 
@@ -75,6 +75,7 @@ const PostRow = ({ posts }) => {
         {posts.map((post) => (
           <Card key={post.id} className={styles.card}>
             <img src={post.img} alt={post.title} className={styles.image} />
+            <p className={styles.cardDescription}>{post.description}</p> {/* New Description Element */}
             <h3 className={styles.cardTitle}>{post.title}</h3>
             <div className={styles.tagContainer}>
               {post.tags.map((tag, index) => (
