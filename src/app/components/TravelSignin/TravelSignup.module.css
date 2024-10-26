@@ -59,6 +59,7 @@
   .submitButton {
     background-color: #edba03; /* Match the button color */
     color: #fff;
+    border-radius: 20px;
   }
   
   .terms {
