@@ -61,6 +61,13 @@
     /* margin: 15px 0 10px; */
     color: #333;
   }
+  .link {
+    text-decoration: none;
+  }
+  
+  .card {
+    text-decoration: none;
+  }
   
   .tagContainer {
     margin: 10px 0;

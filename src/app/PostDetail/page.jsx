@@ -1,0 +1,36 @@
+import React from 'react'
+import Aboutplace from '../components/Aboutplace/Aboutplace';
+import Tourinfo from '../components/Tourinfo/Tourinfo';
+import Experience from '../components/Experience/Experience';
+import Review from '../components/ReviewSection/Review';
+import Feedback from '../components/Feedback/Feedback';
+import FaqSection from "../components/FAQ's/faq";
+import Gallery from '../components/Gallery/Gallery';
+import TravelSignup from '../components/TravelSignin/TravelSignup';
+import Sightsvisit from '../components/Sightsvisit/Sightsvisit';
+const PostDetail = () => {
+    const placeData = {
+        title: "Brief about the place",
+        sections: [
+            "PostDetail your journey begins, you’ll be greeted by your experienced guide, who will share fascinating insights about Iceland’s natural wonders and cultural heritage. The adventure kicks off with a scenic drive along the iconic Ring Road, where you’ll witness breathtaking landscapes that range from towering glaciers to black sand beaches.",
+            "Your first stop is the mesmerizing Seljalandsfoss waterfall, where you’ll have the unique opportunity to walk behind the cascading water, feeling the cool mist on your face. Next, you’ll visit the powerful Skógafoss waterfall, one of Iceland’s largest, where rainbows often form in the mist.",
+            "After soaking in the beauty of these natural wonders, the tour continues to the majestic Sólheimajökull glacier. Here, you’ll embark on an unforgettable journey into a hidden ice cave, a rare and magical experience. The intricate ice formations and vibrant blue hues within the cave create a surreal atmosphere, perfect for capturing stunning photographs."
+        ]
+    };
+    return (
+        <div>
+            <Gallery/>
+            <Aboutplace title={placeData.title} sections={placeData.sections} />
+
+            <Tourinfo />
+            <Experience/>
+            <Sightsvisit/>
+            <Review/>
+            <TravelSignup/>
+            <Feedback/>
+            <FaqSection/>
+        </div>
+    )
+}
+
+export default PostDetail;

@@ -22,6 +22,13 @@
   .cardRow::-webkit-scrollbar {
     display: none; /* Hide scrollbars in Chrome, Safari, and Edge */
   }
+  .link {
+    text-decoration: none;
+  }
+  
+  .card {
+    text-decoration: none;
+  }
   
   .card {
     min-width: 300px;
