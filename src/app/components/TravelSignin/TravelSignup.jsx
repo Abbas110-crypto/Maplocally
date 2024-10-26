@@ -31,7 +31,7 @@ const TravelSignup = () => {
               className={styles.emailInput}
               suffix={
                 <Button type="primary" className={styles.submitButton}>
-                  Let's go
+                  Let&apos;s go
                 </Button>
               }
             />
