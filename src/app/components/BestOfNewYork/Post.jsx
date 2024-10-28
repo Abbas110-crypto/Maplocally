@@ -16,7 +16,7 @@ function Post() {
           <Sidebar />
         </Sider>
         <Layout className={styles.mainSection} style={{ padding: '20px' }}>
-          <Content width={800}>
+          <Content width={700}>
             <PostSection />
           </Content>
         </Layout>

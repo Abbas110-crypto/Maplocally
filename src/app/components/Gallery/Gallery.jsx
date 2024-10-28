@@ -39,14 +39,14 @@ const Gallery = () => {
             src="https://i.ibb.co/9rxzbLD/image.png"
             alt="right-column-img-1"
             width={280}
-            height={200}
+            height={180}
             className={styles.imageSmall}
           />
           <Image
             src="https://i.ibb.co/vzBSvF3/image-1.png"
             alt="right-column-img-2"
             width={280}
-            height={200}
+            height={220}
             className={styles.imageSmall}
             style={{ marginTop: '0px' }}
           />
@@ -58,14 +58,14 @@ const Gallery = () => {
             src="https://i.ibb.co/sHnBNKh/image-2.png"
             alt="middle-column-img-1"
             width={280}
-            height={200}
+            height={250}
             className={styles.imageSmall}
           />
           <Image
             src="https://i.ibb.co/NttQ8XV/Rectangle-2279.png"
             alt="middle-column-img-2"
             width={280}
-            height={200}
+            height={150}
             className={styles.imageSmall}
             style={{ marginTop: '0px' }}
           />

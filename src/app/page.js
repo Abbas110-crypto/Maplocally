@@ -3,15 +3,14 @@ import Feedback from "./components/Feedback/Feedback";
 import Hero from "./components/Hero/HeroSection";
 import MemorablePlace from "./components/MemorablePlace/MemorablePlace";
 import Post from "./components/BestOfNewYork/Post"
-import Sightsvisit from "./components/Sightsvisit/Sightsvisit";
-import styles from "./page.module.css";
+import Feature from "./components/Featured/Feature";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Post/>
-      <Sightsvisit/>
+      <Post />
+      <Feature />
       <MemorablePlace />
       <Feedback />
       <FaqSection />

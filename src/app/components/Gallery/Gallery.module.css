@@ -23,6 +23,7 @@
     font-size: 18px;
     color: #666;
     margin-bottom: 32px;
+    width: 800px;
 }
 
 .buttonContainer {
@@ -59,19 +60,3 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Smaller image size */
-.imageSmall {
-    width: 280px !important;
-    height: 200px !important;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/* Larger image size for the right column */
-.imageLarge {
-    width: 280px !important;
-    /* Double width */
-    height: 400px !important;
-    margin-bottom: 0;
-}

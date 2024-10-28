@@ -2,7 +2,6 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from './PostRow.module.css';
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Row, Col, Tag } from 'antd';
 
 const PostRow = ({ posts }) => {
   const rowRef = useRef(null);
@@ -72,11 +71,11 @@ const PostRow = ({ posts }) => {
               <div className={styles.cardContent}>
                 <p className={styles.cardDescription}>{post.description}</p>
                 <h3 className={styles.cardTitle}>{post.title}</h3>
-                <div className={styles.tagContainer}>
-                  {post.tags.map((tag, index) => (
-                    <Tag key={index} className={styles.tag}>{tag}</Tag>
-                  ))}
-                </div>
+                <img
+                  src="https://i.ibb.co/XYTSfLC/Group-48101322.png"
+                  alt="Custom image"
+                  className={styles.customImage} // Add this style in CSS for the custom image
+                />
                 <p className={styles.price}>From US$ {post.price}</p>
               </div>
             </div>

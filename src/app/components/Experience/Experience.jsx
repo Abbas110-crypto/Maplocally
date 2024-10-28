@@ -13,7 +13,7 @@ const Experience = () => {
           Highlight
         </Col>
         <Col span={20}>
-          <ul className={style.list}>
+          <ul className={`${style.list} ${style.highlightList}`}>
             <li>See the light display of the Aurora Borealis</li>
             <li>Escape the bright lights of Reykjavik for better views of the Northern Lights</li>
             <li>Learn more about how and why the dancing lights occur</li>
@@ -77,7 +77,7 @@ const Experience = () => {
           <Row>
             <Col span={20} className={style.infosec}>
               <h4 className={style.subtitle}>What to bring</h4>
-              <ul className={style.list}>
+              <ul className={`${style.list} ${style.impList}`}>
                 <li>Comfortable shoes</li>
                 <li>Warm clothing</li>
               </ul>
