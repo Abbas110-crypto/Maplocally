@@ -10,6 +10,7 @@ body {
   font-family: 'Mona Sans', sans-serif;
   overflow-x: hidden;
   max-width: 1440px;
+  background-color: white;
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +30,7 @@ body {
 
 /* the track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: white;
 }
 
 @media screen and (min-width: 1920px) {

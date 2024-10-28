@@ -1,0 +1,90 @@
+import { Card, Tag } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import styles from './PostRow.module.css';
+import { useRef, useEffect, useState } from 'react';
+import Link from 'next/link';
+
+const PostRow = ({ posts }) => {
+  const rowRef = useRef(null); // Reference for the card row
+  const [isScrollable, setIsScrollable] = useState(false); // To check if scroll is necessary
+  const [scrollPos, setScrollPos] = useState(0); // Current scroll position
+
+  // Function to update scrollable state
+  const updateScrollable = () => {
+    if (rowRef.current) {
+      setIsScrollable(rowRef.current.scrollWidth > rowRef.current.clientWidth);
+    }
+  };
+
+  useEffect(() => {
+    updateScrollable();
+    window.addEventListener('resize', updateScrollable);
+    return () => {
+      window.removeEventListener('resize', updateScrollable);
+    };
+  }, []);
+
+  // Handle scroll event to track current scroll position
+  const handleScroll = () => {
+    if (rowRef.current) {
+      setScrollPos(rowRef.current.scrollLeft);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (rowRef.current) {
+      rowRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (rowRef.current) {
+      rowRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    if (rowRef.current) {
+      rowRef.current.addEventListener('scroll', handleScroll);
+    }
+    return () => {
+      if (rowRef.current) {
+        rowRef.current.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
+  return (
+    <div className={styles.cardRowContainer}>
+      {isScrollable && scrollPos > 0 && (
+        <button className={`${styles.arrowButton} ${styles.left}`} onClick={scrollLeft}>
+          <LeftOutlined />
+        </button>
+      )}
+      {isScrollable && rowRef.current && scrollPos < (rowRef.current.scrollWidth - rowRef.current.clientWidth) - 5 && (
+        <button className={`${styles.arrowButton} ${styles.right}`} onClick={scrollRight}>
+          <RightOutlined />
+        </button>
+      )}
+      <div className={styles.cardRow} ref={rowRef}>
+        {posts.map((post) => (
+          <Link href={`/PostDetail?id=${post.id}`} key={post.id} passHref>
+            <Card className={styles.card}>
+              <img src={post.img} alt={post.title} className={styles.image} />
+              <p className={styles.cardDescription}>{post.description}</p>
+              <h3 className={styles.cardTitle}>{post.title}</h3>
+              <div className={styles.tagContainer}>
+                {post.tags.map((tag, index) => (
+                  <Tag key={index} className={styles.tag}>{tag}</Tag>
+                ))}
+              </div>
+              <p className={styles.price}>From US$ {post.price}</p>
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default PostRow;

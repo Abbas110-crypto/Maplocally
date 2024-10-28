@@ -1,27 +1,134 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  background-color: white;
+  padding: 10px 10px;
+  z-index: 200;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-bottom: 5%;
+}
+
+.left {
+  flex: 7;
+}
+
+.center {
+  flex: 4;
+  text-align: start;
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks li {
+  display: inline;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #484848;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.menuIcon {
+  display: none;
+}
+
+.loginbtn {
+  background-image: linear-gradient(to right, #0A2F42, #1978A8);
+  ;
+  align-items: center;
+  align-content: center;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  font-family: 'Mona Sans', sans-serif;
+  font-weight: 700;
+}
+
+.loginbtn:hover {
+  background-color: #01475c;
+}
+
+.logo {
+  margin-left: 3%;
+}
+
+@media (min-width: 350px) and (max-width: 500px) {
+  .navLinks {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.drawer {
+  background-color: white;
+  /* Set the background color of the drawer to white */
+}
+
+
+
+.drawerMain {
+  padding: 20px;
+}
+
+.unorderedList {
+  list-style: none;
+  font-size: 18px;
+  font-family: poppins;
+  font-weight: 600;
+}
+
+.unorderedList li a {
+  text-decoration: none;
+  padding: 0;
+  display: inline-block;
+  margin-bottom: 10%;
+  color: black;
+}
+
+@media(min-width:510px) and (max-width: 1100px) {
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
+    height: 70px;
     background-color: white;
     padding: 10px 10px;
-    z-index: 2;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
   }
-  
+
   .left {
-    flex: 7;
+    flex: 1;
   }
-  
+
   .center {
     flex: 6;
     text-align: start;
   }
-  
+
   .navLinks {
     list-style: none;
     padding: 0;
@@ -29,125 +136,25 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .navLinks li {
     margin-right: 30px;
     display: inline;
-    margin: 0 35px;
-    cursor: pointer;
+    margin: 0 15px;
   }
-  
+
   .navLinks a {
     text-decoration: none;
     color: #484848;
-    font-size: 17px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
   }
-  .menuIcon{
-    display: none;
-  }
-   
-  .loginbtn {
-    background-image:linear-gradient(to right, #0A2F42, #1978A8); ;
-    align-items: center;
-    align-content: center;
-    color: white;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    height: 35px;
-    font-family: 'Mona Sans', sans-serif;
-    font-weight: 700;
-}
-  
-  .loginbtn:hover {
-    background-color: #01475c;
-  }
+
   .logo {
-   margin-left: 3%;
+    position: relative;
+    bottom: 50px;
   }
-  
-  @media (min-width: 350px) and (max-width: 500px) {
-    .navLinks {
-      display: none;
-    }
-    .menuIcon {
-      display: block;
-      cursor: pointer;
-    }
-  }
-  
-  .drawer {
-    background-color: white;
-    /* Set the background color of the drawer to white */
-  }
-  
-   
-  
-  .drawerMain {
-    padding: 20px;
-  }
-  .unorderedList{
-    list-style: none;
-    font-size: 18px;
-    font-family: poppins;
-    font-weight: 600;
-  }
-  .unorderedList li a{
-    text-decoration: none;
-    padding: 0;
-    display: inline-block;
-    margin-bottom: 10%;
-    color: black;
-  }
-  
-  @media(min-width:510px) and (max-width: 1100px) {
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-      background-color: white;
-      padding: 10px 10px;
-    }
-  
-    .left {
-      flex: 1;
-    }
-  
-    .center {
-      flex: 6;
-      text-align: start;
-    }
-  
-    .navLinks {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .navLinks li {
-      margin-right: 30px;
-      display: inline;
-      margin: 0 15px;
-    }
-  
-    .navLinks a {
-      text-decoration: none;
-      color: #484848;
-      font-size: 11px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
-    .logo {
-      position: relative;
-      bottom: 50px;
-    }
-  
-  }
+
+}
