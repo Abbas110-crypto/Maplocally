@@ -14,12 +14,12 @@ const Review = () => {
             <h3 className={styles.heading}>Customer Reviews</h3>
             <div className={styles.overallRating}>
               <span className={styles.label}>Overall rating</span>
-              <Rate allowHalf defaultValue={4.2} disabled className={styles.stars} />
               <span className={styles.ratingValue}>4.2/5</span>
+              <Rate allowHalf defaultValue={4.2} disabled className={styles.stars} />
               <span className={styles.reviewsCount}>152 Reviews</span>
             </div>
             <div className={styles.reviewSummary}>
-              <h4 className={styles.subHeading}>Review Summary</h4>
+              <h4 className={styles.heading}>Review Summary</h4>
               {[
                 { title: 'Guide', rating: 5 },
                 { title: 'Summary', rating: 5 },

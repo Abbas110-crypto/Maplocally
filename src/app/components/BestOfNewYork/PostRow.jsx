@@ -1,15 +1,14 @@
-import { Card, Tag } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from './PostRow.module.css';
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Row, Col, Tag } from 'antd';
 
 const PostRow = ({ posts }) => {
-  const rowRef = useRef(null); // Reference for the card row
-  const [isScrollable, setIsScrollable] = useState(false); // To check if scroll is necessary
-  const [scrollPos, setScrollPos] = useState(0); // Current scroll position
+  const rowRef = useRef(null);
+  const [isScrollable, setIsScrollable] = useState(false);
+  const [scrollPos, setScrollPos] = useState(0);
 
-  // Function to update scrollable state
   const updateScrollable = () => {
     if (rowRef.current) {
       setIsScrollable(rowRef.current.scrollWidth > rowRef.current.clientWidth);
@@ -24,7 +23,6 @@ const PostRow = ({ posts }) => {
     };
   }, []);
 
-  // Handle scroll event to track current scroll position
   const handleScroll = () => {
     if (rowRef.current) {
       setScrollPos(rowRef.current.scrollLeft);
@@ -69,17 +67,19 @@ const PostRow = ({ posts }) => {
       <div className={styles.cardRow} ref={rowRef}>
         {posts.map((post) => (
           <Link href={`/PostDetail?id=${post.id}`} key={post.id} passHref>
-            <Card className={styles.card}>
-              <img src={post.img} alt={post.title} className={styles.image} />
-              <p className={styles.cardDescription}>{post.description}</p>
-              <h3 className={styles.cardTitle}>{post.title}</h3>
-              <div className={styles.tagContainer}>
-                {post.tags.map((tag, index) => (
-                  <Tag key={index} className={styles.tag}>{tag}</Tag>
-                ))}
+            <div className={styles.customCard}>
+              <img src={post.img} alt={post.title} className={styles.cardImage} />
+              <div className={styles.cardContent}>
+                <p className={styles.cardDescription}>{post.description}</p>
+                <h3 className={styles.cardTitle}>{post.title}</h3>
+                <div className={styles.tagContainer}>
+                  {post.tags.map((tag, index) => (
+                    <Tag key={index} className={styles.tag}>{tag}</Tag>
+                  ))}
+                </div>
+                <p className={styles.price}>From US$ {post.price}</p>
               </div>
-              <p className={styles.price}>From US$ {post.price}</p>
-            </Card>
+            </div>
           </Link>
         ))}
       </div>

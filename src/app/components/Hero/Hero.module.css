@@ -10,7 +10,7 @@
   width: 100%;
   margin-top: 8%;
   max-width: 1200px;
-  height: 450px; /* Make height flexible for better responsiveness */
+  height: 500px; /* Make height flexible for better responsiveness */
   position: relative;
   overflow: hidden; /* Hide any overflow caused by image adjustments */
 }

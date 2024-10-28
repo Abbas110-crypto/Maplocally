@@ -8,7 +8,7 @@ const TravelSignup = () => {
       {/* Background Image Element */}
       <div className={styles.backgroundImage}>
         <Image
-          src="https://i.ibb.co/rwWbfCW/Group-1000003417-2.png"
+          src="https://i.ibb.co/h8n7QKZ/Group-1000003417-3.png"
           alt="background"
           layout="fill"
           objectFit="cover"

@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
-import PostRow from '../PostRow/PostRow';
-import styles from './Sightsvisit.module.css'
-function Sightsvisit() {
+import PostRow from './PostRow';
+import styles from './Feature.module.css'
+function Feature() {
     const posts1 = [
       { id: 1, title: "Niagara Falls Tour", category: "tour", price: 94, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Nature', 'Waterfall'] , description: "Attraction passes. NewYork"},
       { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
@@ -30,7 +30,7 @@ function Sightsvisit() {
   ];
   return (
     <div className={styles.mainsection}>
-      <h2 className={styles.title}>You might also like...</h2>
+      <h2 className={styles.title}>Featured places</h2>
       <PostRow posts={posts1} />
       <PostRow posts={posts2} />
       <PostRow posts={posts3} />
@@ -38,4 +38,4 @@ function Sightsvisit() {
   )
 }
 
-export default Sightsvisit
+export default Feature

@@ -4,7 +4,8 @@
     background-color: white;
     max-width: 1000px;
     margin: 20px 0;
-    margin-left: 3%;
+    margin-left: 2%;
+    margin-top: 5% ;
 }
 
 .title {
@@ -22,12 +23,13 @@
 }
 
 .label {
-    flex: 0 0 auto;
+    /* flex: 0 0 auto; */
     text-align: left;
+    
     font-weight: 600;
     font-size: 16px;
     font-family: 'Mona Sans', sans-serif;
-    padding-right: 15px;
+    height: 150px;
 }
 
 .content {
@@ -35,6 +37,7 @@
     text-align: right;
     margin: 0;
     padding: 0;
+    background-color: rgb(122, 126, 125);
 }
 
 .list {
@@ -42,8 +45,15 @@
     list-style: none; /* Remove default bullets */
     text-align: left;
     margin: 0;
+    height: 150px;
+    margin-left: 50px;
+
 }
 
+.highlightList{
+    margin-left: 30px;
+
+}
 .list li {
     display: flex;
     align-items: center;
@@ -57,11 +67,12 @@
 
 .para {
     font-size: 14px;
-    color: #666;
+    color: #000000;
     font-family: 'Mona Sans', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
+    height: 150px;
+    margin-left: 50px;
 }
 
 .link {
@@ -74,6 +85,7 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 4px;
+    margin-left: 70px;
 }
 
 /* Specific spacing adjustment for "Important information" section */
@@ -90,9 +102,14 @@
     margin-top: 0; /* eliminate any top margin */
 }
 
-.section-important-info .list {
+.impList{
     padding-top: 5px; /* adjust if you need a little space */
     margin-top: 0;
+    margin-left: 58px;
+   
+}
+.list li{
+    padding-left: 10px;
 }
 
 .infosec {
