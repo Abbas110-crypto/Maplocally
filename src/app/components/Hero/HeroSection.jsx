@@ -48,7 +48,7 @@ const Hero = () => {
           
             >
               <h1 className={styles.heading}>
-                Discover dreams in USA&apos;s Iconic Spots
+                Discover dreams in New York&apos;s Iconic Spots
               </h1>
               <p className={styles.paragraph}>
                 like the Empire State Building, Guggenheim Museum, and Michelin-starred Jean Georges
