@@ -34,7 +34,7 @@ const Gallery = () => {
       {/* Images grid */}
       <Row className={styles.imageGrid} gutter={[16, 16]}> {/* Keeping a small gutter for minimal spacing */}
         {/* Right Column (previously Left Column) */}
-        <Col xs={24} md={8}>
+        <Col  className={styles.customCol} xs={24} md={8}>
           <Image
             src="https://i.ibb.co/9rxzbLD/image.png"
             alt="right-column-img-1"
@@ -53,7 +53,7 @@ const Gallery = () => {
         </Col>
 
         {/* Middle Column */}
-        <Col xs={24} md={8}>
+        <Col  className={styles.customCol} xs={24} md={8}>
           <Image
             src="https://i.ibb.co/sHnBNKh/image-2.png"
             alt="middle-column-img-1"
@@ -72,7 +72,7 @@ const Gallery = () => {
         </Col>
 
         {/* Left Column (Double-size Image) */}
-        <Col xs={24} md={8}>
+        <Col  className={styles.customCol} xs={24} md={8}>
           <Image
             src="https://i.ibb.co/0rx2Fft/image-3.png"
             alt="left-column-img"

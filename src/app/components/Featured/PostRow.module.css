@@ -1,8 +1,8 @@
 /* Card Row Container */
 .cardRowContainer {
     position: relative;
-    width: 90%;
-    margin-left: 3%;
+    width: 85%;
+    margin-left: 5%;
   }
   
   /* Card Row Styling */
@@ -48,7 +48,7 @@
   .cardTitle {
     font-size: 16px;
     color: #333;
-    margin: 0;
+    margin-top: 10px;
     overflow-wrap: break-word; /* Ensures long words break to the next line */
     word-wrap: break-word;     /* For compatibility with older browsers */
     word-break: break-word;    /* Ensures text will break at the end of a line */
@@ -64,15 +64,7 @@
     font-size: 16px;
     color: #000;
     font-weight: 500;
-    margin: 10px 0 0;
-  }
-  
-  /* Tag Container Styling */
-  .tagContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px; /* Adjust gap between tags */
-    margin-top: 10px;
+    margin: 0px 0 0;
   }
   
   /* Optional: You can adjust the styling of the Ant Design Tag if needed */
@@ -99,11 +91,11 @@
   }
   
   .arrowButton.left {
-    left: 10px;
+    left: -50px;
   }
   
   .arrowButton.right {
-    right: 10px;
+    right: -50px;
   }
   
   .arrowButton:hover {

@@ -1,8 +1,8 @@
 /* Card Row Container */
 .cardRowContainer {
   position: relative;
-  width: 90%;
-  margin-left: 3%;
+  width: 85%;
+  margin-left: 5%;
 }
 
 /* Card Row Styling */
@@ -101,11 +101,11 @@
 }
 
 .arrowButton.left {
-  left: 10px;
+  left: -50px;
 }
 
 .arrowButton.right {
-  right: 10px;
+  right: -50px;
 }
 
 .arrowButton:hover {
