@@ -1,10 +1,23 @@
-// src/components/Gallery.js
-
+"use client"
 import { Row, Col, Button } from 'antd';
 import Image from 'next/image';
-import styles from './Gallery.module.css'; // For custom CSS
+import { useState } from 'react';
+import styles from './Gallery.module.css';
 
 const Gallery = () => {
+  // State for each image's heart icon toggle
+  const [filledHearts, setFilledHearts] = useState([false, false, false, false, false]);
+
+  // Toggle function for heart icons
+  const toggleHeart = (index) => {
+    console.log("Heart clicked at index:", index); // Debugging log
+    setFilledHearts((prev) => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
@@ -32,6 +45,7 @@ const Gallery = () => {
       </div>
 
       {/* Images grid */}
+<<<<<<< Updated upstream
       <Row className={styles.imageGrid} gutter={[16, 16]}> {/* Keeping a small gutter for minimal spacing */}
         {/* Right Column (previously Left Column) */}
         <Col xs={24} md={8}>
@@ -80,6 +94,94 @@ const Gallery = () => {
             height={400}
             className={styles.imageLarge}
           />
+=======
+      <Row className={styles.imageGrid} gutter={[16, 16]}>
+        {/* Right Column */}
+        <Col className={styles.customCol} xs={24} md={8}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="https://i.ibb.co/9rxzbLD/image.png"
+              alt="right-column-img-1"
+              width={280}
+              height={180}
+              className={styles.imageSmall}
+            />
+            <img
+              src="https://i.ibb.co/899L76h/Group-1000003418-1.png"
+              alt="heart-icon"
+              className={`${styles.heartIcon} ${filledHearts[0] ? styles.heartFilled : ''}`}
+              onClick={() => toggleHeart(0)}
+            />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="https://i.ibb.co/vzBSvF3/image-1.png"
+              alt="right-column-img-2"
+              width={280}
+              height={220}
+              className={styles.imageSmall}
+            />
+            <img
+              src="https://i.ibb.co/899L76h/Group-1000003418-1.png"
+              alt="heart-icon"
+              className={`${styles.heartIcon} ${filledHearts[1] ? styles.heartFilled : ''}`}
+              onClick={() => toggleHeart(1)}
+            />
+          </div>
+        </Col>
+
+        {/* Middle Column */}
+        <Col className={styles.customCol} xs={24} md={8}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="https://i.ibb.co/sHnBNKh/image-2.png"
+              alt="middle-column-img-1"
+              width={280}
+              height={250}
+              className={styles.imageSmall}
+            />
+            <img
+              src="https://i.ibb.co/899L76h/Group-1000003418-1.png"
+              alt="heart-icon"
+              className={`${styles.heartIcon} ${filledHearts[2] ? styles.heartFilled : ''}`}
+              onClick={() => toggleHeart(2)}
+            />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="https://i.ibb.co/NttQ8XV/Rectangle-2279.png"
+              alt="middle-column-img-2"
+              width={280}
+              height={150}
+              className={styles.imageSmall}
+            />
+            <img
+              src="https://i.ibb.co/899L76h/Group-1000003418-1.png"
+              alt="heart-icon"
+              className={`${styles.heartIcon} ${filledHearts[3] ? styles.heartFilled : ''}`}
+              onClick={() => toggleHeart(3)}
+            />
+          </div>
+        </Col>
+
+        {/* Left Column */}
+        <Col className={styles.customCol} xs={24} md={8}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="https://i.ibb.co/0rx2Fft/image-3.png"
+              alt="left-column-img"
+              width={280}
+              height={400}
+              className={styles.imageLarge}
+            />
+            <img
+              src="https://i.ibb.co/899L76h/Group-1000003418-1.png"
+              alt="heart-icon"
+              className={`${styles.heartIcon} ${filledHearts[4] ? styles.heartFilled : ''}`}
+              onClick={() => toggleHeart(4)}
+            />
+          </div>
+>>>>>>> Stashed changes
         </Col>
       </Row>
     </div>

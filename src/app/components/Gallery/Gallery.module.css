@@ -59,4 +59,30 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+<<<<<<< Updated upstream
 
+=======
+.imageWrapper {
+    position: relative;
+}
+
+.heartIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+/* Filled heart icon style */
+.heartFilled {
+    filter: brightness(0) invert(1); /* Makes the heart icon white */
+}
+
+
+.heartIcon:hover {
+    filter: brightness(1.2);
+}
+>>>>>>> Stashed changes

@@ -1,0 +1,20 @@
+.mainsection{
+    margin-top: 5%;
+}
+.rightsection{
+margin-top: 10%;
+margin-right: 10%;
+}
+.mapContainer {
+    height: 300px;
+    border-radius: 8px; /* Match the card radius */
+    overflow: hidden;   /* Ensures that no overflow occurs */
+    box-shadow: none;   /* Remove any default shadow */
+}
+
+.custommap{
+    height: 300px;
+    margin-right: 10px;
+    margin-top: -90px;
+    z-index: -1;
+}
