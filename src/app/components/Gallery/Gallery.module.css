@@ -48,20 +48,15 @@
 
 /* Center the images */
 .imageGrid {
-    max-width: 850px;
-    /* Ensure it stays within the page width */
-    margin: 0 auto;
-    /* Center the whole grid container */
-
+    max-width: 850px; /* Ensure it stays within the page width */
+    margin: 0 auto; /* Center the whole grid container */
 }
 
 .image {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-<<<<<<< Updated upstream
 
-=======
 .imageWrapper {
     position: relative;
 }
@@ -81,8 +76,6 @@
     filter: brightness(0) invert(1); /* Makes the heart icon white */
 }
 
-
 .heartIcon:hover {
     filter: brightness(1.2);
 }
->>>>>>> Stashed changes

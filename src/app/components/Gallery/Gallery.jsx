@@ -1,16 +1,14 @@
-"use client"
+"use client";
 import { Row, Col, Button } from 'antd';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from './Gallery.module.css';
 
 const Gallery = () => {
-  // State for each image's heart icon toggle
   const [filledHearts, setFilledHearts] = useState([false, false, false, false, false]);
 
-  // Toggle function for heart icons
   const toggleHeart = (index) => {
-    console.log("Heart clicked at index:", index); // Debugging log
+    console.log("Heart clicked at index:", index);
     setFilledHearts((prev) => {
       const newState = [...prev];
       newState[index] = !newState[index];
@@ -44,57 +42,6 @@ const Gallery = () => {
         </Button>
       </div>
 
-      {/* Images grid */}
-<<<<<<< Updated upstream
-      <Row className={styles.imageGrid} gutter={[16, 16]}> {/* Keeping a small gutter for minimal spacing */}
-        {/* Right Column (previously Left Column) */}
-        <Col xs={24} md={8}>
-          <Image
-            src="https://i.ibb.co/9rxzbLD/image.png"
-            alt="right-column-img-1"
-            width={280}
-            height={180}
-            className={styles.imageSmall}
-          />
-          <Image
-            src="https://i.ibb.co/vzBSvF3/image-1.png"
-            alt="right-column-img-2"
-            width={280}
-            height={220}
-            className={styles.imageSmall}
-            style={{ marginTop: '0px' }}
-          />
-        </Col>
-
-        {/* Middle Column */}
-        <Col xs={24} md={8}>
-          <Image
-            src="https://i.ibb.co/sHnBNKh/image-2.png"
-            alt="middle-column-img-1"
-            width={280}
-            height={250}
-            className={styles.imageSmall}
-          />
-          <Image
-            src="https://i.ibb.co/NttQ8XV/Rectangle-2279.png"
-            alt="middle-column-img-2"
-            width={280}
-            height={150}
-            className={styles.imageSmall}
-            style={{ marginTop: '0px' }}
-          />
-        </Col>
-
-        {/* Left Column (Double-size Image) */}
-        <Col xs={24} md={8}>
-          <Image
-            src="https://i.ibb.co/0rx2Fft/image-3.png"
-            alt="left-column-img"
-            width={280}
-            height={400}
-            className={styles.imageLarge}
-          />
-=======
       <Row className={styles.imageGrid} gutter={[16, 16]}>
         {/* Right Column */}
         <Col className={styles.customCol} xs={24} md={8}>
@@ -181,7 +128,6 @@ const Gallery = () => {
               onClick={() => toggleHeart(4)}
             />
           </div>
->>>>>>> Stashed changes
         </Col>
       </Row>
     </div>
