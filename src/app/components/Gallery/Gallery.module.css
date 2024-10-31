@@ -40,10 +40,10 @@
 .arrowIcon {
     margin-left: 10px;
     background-color: white;
-    border-radius: 5px;
-    padding-top: 2px;
-    width: 20px;
-    height: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 /* Center the images */

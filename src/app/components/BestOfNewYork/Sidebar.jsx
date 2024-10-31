@@ -58,7 +58,7 @@ const Sidebar = () => {
   const renderOption = (option) => {
     const isChecked = filters.category.includes(option.value);
     return (
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <label className="categoryoption">
         <input
           type="checkbox"
           checked={isChecked}
@@ -68,12 +68,12 @@ const Sidebar = () => {
               : [...filters.category, option.value];
             handleCategoryChange(newCategories);
           }}
-          style={{ marginRight: 8 }} // Space between checkbox and label
         />
-        <span>{option.label}</span>
-      </div>
+        {option.label}
+      </label>
     );
   };
+
 
   return (
     <div className="sidebar">
