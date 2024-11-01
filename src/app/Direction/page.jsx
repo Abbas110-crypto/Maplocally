@@ -53,10 +53,10 @@ const PostDetail = () => {
             category: "tour",
             price: 94,
             img: 'https://i.ibb.co/XDTkpvb/images.jpg',
-            tags: ['Nature', 'Waterfall'],
+            tags: ['Pickup', 'Easy refund'],
             description: "Tour",
+            goldentag: 'Exclusive Deal' ,
             paragraph: 'White Center pizzeria Proletariat offers thin-crust pies with the occasional surprise topping (like Spam), arcade games, a photo booth, and a cheerful family vibe. Service is blindingly fast. The fact that the kids’ area is right next to a table, so diners can actually eat their food while keeping an eye on the children, is a major bonus.',
-            goldentag: 'Exclusive Deal' // New property for the dynamic tag
 
         }
     ];
