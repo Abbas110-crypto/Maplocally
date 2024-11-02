@@ -1,8 +1,8 @@
 "use client"; 
 import { Row, Col, Button } from 'antd';
-import { MapContainer, TileLayer } from 'react-leaflet';
+// import { MapContainer, TileLayer } from 'react-leaflet';
 import { EnvironmentOutlined } from '@ant-design/icons';
-import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.css';
 import styles from './Location.module.css';
 import { useEffect, useState } from 'react';
 
@@ -37,7 +37,7 @@ const Location = ({ location, recommendations = [] }) => {
                     />
                 </div>
             </Col>
-            <Col className={styles.rightsection} xs={24} md={10}>
+            {/* <Col className={styles.rightsection} xs={24} md={10}>
                 <div className={styles.mapContainer} style={{ marginBottom: 16 }}>
                     <MapContainer
                         className={styles.custommap}
@@ -77,7 +77,7 @@ const Location = ({ location, recommendations = [] }) => {
                         )}
                     </div>
                 </div>
-            </Col>
+            </Col> */}
         </Row>
     );
 };
