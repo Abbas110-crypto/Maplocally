@@ -4,7 +4,7 @@ import Aboutplace from '../components/Aboutplace/Aboutplace';
 import Tourinfo from '../components/Tourinfo/Tourinfo';
 import Feedback from '../components/Feedback/Feedback';
 import FaqSection from "../components/FAQ's/faq";
-// import Location from '../components/Location/Location';
+import Location from '../components/Location/Location';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
 import DirectionPost from '../components/DirectionPost/DirectionPost';
 import styles from "./page.module.css"
@@ -75,9 +75,9 @@ const Direction = () => {
     };
     return (
         <div>
-            {/* <div style={{ padding: '20px' }}>
+            <div style={{ padding: '20px' }}>
                 <Location location={location} recommendations={recommendations} />
-            </div>             */}
+            </div>
             <Aboutplace title={placeData.title} sections={placeData.sections} />
             <h2 className={styles.hd} >You may also like</h2>
             <DirectionPost posts={post1} />
