@@ -1,4 +1,4 @@
-"use client"; // Ensure this is at the top
+"use client"; 
 import { Row, Col, Button } from 'antd';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { EnvironmentOutlined } from '@ant-design/icons';
@@ -7,12 +7,16 @@ import styles from './Location.module.css';
 import { useEffect, useState } from 'react';
 
 const Location = ({ location, recommendations }) => {
-    const position = [location.latitude, location.longitude];
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
         setIsClient(true); // Indicate that we are in the client
     }, []);
+
+    // Validate location
+    const position = location && location.latitude && location.longitude
+        ? [location.latitude, location.longitude]
+        : [0, 0]; // Default position, could also handle a loading state
 
     const handleOpenMap = () => {
         if (isClient) {

@@ -8,7 +8,7 @@ import Location from '../components/Location/Location';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
 import DirectionPost from '../components/DirectionPost/DirectionPost';
 import styles from "./page.module.css"
-const PostDetail = () => {
+const Direction = () => {
     const location = {
         name: 'Hilton Hotel Niagara Falls',
         city: 'Niagara Falls',
@@ -95,4 +95,4 @@ const PostDetail = () => {
     )
 }
 
-export default PostDetail;
+export default Direction;
