@@ -1,13 +1,24 @@
-// Location.js
-"use client";
+"use client"; // Ensure this is at the top
 import { Row, Col, Button } from 'antd';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { EnvironmentOutlined } from '@ant-design/icons';
 import 'leaflet/dist/leaflet.css';
 import styles from './Location.module.css';
+import { useEffect, useState } from 'react';
 
 const Location = ({ location, recommendations }) => {
     const position = [location.latitude, location.longitude];
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true); // Indicate that we are in the client
+    }, []);
+
+    const handleOpenMap = () => {
+        if (isClient) {
+            window.open(`https://maps.google.com/?q=${position[0]},${position[1]}`, '_blank');
+        }
+    };
 
     return (
         <Row className={styles.mainsection} justify="center">
@@ -43,7 +54,7 @@ const Location = ({ location, recommendations }) => {
                 <Button
                     className={styles.btn}
                     icon={<EnvironmentOutlined />}
-                    onClick={() => window.open(`https://maps.google.com/?q=${position[0]},${position[1]}`, '_blank')}
+                    onClick={handleOpenMap}
                 >
                     Open in Google Maps
                 </Button>
@@ -63,7 +74,6 @@ const Location = ({ location, recommendations }) => {
                         ))}
                     </div>
                 </div>
-
             </Col>
         </Row>
     );
