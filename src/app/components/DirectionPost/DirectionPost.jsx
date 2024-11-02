@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from './DirectionPost.module.css';
 import { useRef, useEffect, useState } from 'react';
@@ -18,9 +18,15 @@ const DirectionPost = ({ posts }) => {
 
     useEffect(() => {
         updateScrollable();
-        window.addEventListener('resize', updateScrollable);
+        
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', updateScrollable);
+        }
+
         return () => {
-            window.removeEventListener('resize', updateScrollable);
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('resize', updateScrollable);
+            }
         };
     }, []);
 
@@ -86,7 +92,6 @@ const DirectionPost = ({ posts }) => {
                                 </div>
                             </div>
                         </Link>
-                        {/* New Paragraph and Button added here, outside the card */}
                         <p className={styles.additionalText}>{post.paragraph}</p>
                         <button className={styles.openMapButton}>Open in Google Maps</button>
                     </div>

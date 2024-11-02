@@ -42,28 +42,26 @@ const ArticleHero = () => {
           <Row justify="center" align="middle">
             <Col
               xs={22} 
-              sm={20}  
-              md={18}  
-              lg={16} 
-          
-            >
-              <h1 className={styles.heading}>
-                Discover dreams in New York&apos;s Iconic Spots
-              </h1>
-              <p className={styles.paragraph}>
-                like the Empire State Building, Guggenheim Museum, and Michelin-starred Jean Georges
-              </p>
-            </Col>
-          </Row>
-          <Row justify="center" align="middle">
-            <Col
-              xs={22} 
               sm={20} 
               md={16} 
               lg={12} 
 
             >
               <SearchBar />
+            </Col>
+          </Row>
+          <Row justify="center" align="middle">
+            <Col
+              xs={22} 
+              sm={20}  
+              md={18}  
+              lg={16} 
+          
+            >
+              <h1 className={styles.heading}>
+                #Trending News  #Social media  #Mailing  #Manusipi
+              </h1>
+           
             </Col>
           </Row>
         </div>
