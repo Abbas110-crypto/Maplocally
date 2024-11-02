@@ -7,7 +7,6 @@ import Feedback from '../components/Feedback/Feedback';
 import FaqSection from "../components/FAQ's/faq";
 import Gallery from '../components/Gallery/Gallery';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
-import Sightsvisit from '../components/Sightsvisit/Sightsvisit';
 import styles from './page.module.css'
 import ArticleCard from '../components/ArticleCard/ArticleCard';
 import ArticleSection from '../components/ArticleSection/ArticleSection';

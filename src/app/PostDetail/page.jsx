@@ -7,7 +7,7 @@ import Feedback from '../components/Feedback/Feedback';
 import FaqSection from "../components/FAQ's/faq";
 import Gallery from '../components/Gallery/Gallery';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
-import Sightsvisit from '../components/Sightsvisit/Sightsvisit';
+import MightAlsoLike from '../components/MightAlsoLike/MightAlsoLike';
 import styles from './page.module.css'
 const PostDetail = () => {
     const placeData = {
@@ -31,7 +31,7 @@ const PostDetail = () => {
             <Tourinfo />
 
             <Experience />
-            <Sightsvisit />
+            <MightAlsoLike />
             <Review />
             <TravelSignup />
             <Feedback />
