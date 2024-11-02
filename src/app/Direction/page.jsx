@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Aboutplace from '../components/Aboutplace/Aboutplace';
 import Tourinfo from '../components/Tourinfo/Tourinfo';
