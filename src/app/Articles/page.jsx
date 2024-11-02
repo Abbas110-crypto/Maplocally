@@ -11,6 +11,8 @@ import Sightsvisit from '../components/Sightsvisit/Sightsvisit';
 import styles from './page.module.css'
 import ArticleCard from '../components/ArticleCard/ArticleCard';
 import ArticleSection from '../components/ArticleSection/ArticleSection';
+import SeperateArticle from '../components/SeperateArticle/SeperateArticle';
+import ArticleHero from '../components/ArticleHero/ArticleHero'
 const Articles = () => {
     const articlesData = [
         {
@@ -56,15 +58,16 @@ const Articles = () => {
     };
     return (
         <div>
+            <ArticleHero/>
             <ArticleSection/>
+            <SeperateArticle/>
             <Aboutplace title={placeData.title} sections={placeData.sections} />
             <ArticleCard articles={articlesData} />
-           
-           
             <Feedback />
 
         </div>
     )
 }
+
 
 export default Articles;

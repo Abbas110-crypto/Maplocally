@@ -1,137 +1,137 @@
-.mainSection{
-    margin-top: 150px;
-    margin-left: 3%;
+.mainSection {
+  margin-top: 150px;
+  margin-left: 3%;
 }
+
 .articleComponent {
-    padding: 20px;
-    margin-top: 3%;
-  }
+  padding: 20px;
+  margin-top: 3%;
+}
 
-  .hd{
-    margin: 10px;
-    font-size: 30px;
-    font-weight: 500;
+.hd {
+  margin: 10px;
+  font-size: 30px;
+  font-weight: 500;
 
-  }
-  
-  .mainArticle {
-    border-right: 1px solid #d9d9d9;
-    padding-right: 20px;
-  }
-  
-  .mainImageContainer {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .mainImage {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .overlay {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .stats {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 4px 8px;
-    color: #fff;
-  }
-  
-  .likes, .comments {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .mainContent {
-    margin-top: 10px;
-    align-items: left;
-  }
-  
-  .profileInfo {
-    padding: 0;
-    margin-left: 10px;
-    width: 180px;
-    margin-left: -1px;
-  }
-  
-  .profileImage {
-    border-radius: 50%;
-    margin-left: -10px;
-    
-  }
-  
-  .author {
-    font-size: 14px;
-    font-weight: 400;
-    margin-left: -20px;
-  }
-  
-  .title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 5px 0;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #555;
-    width: 500px;
-    margin-left: 0;
-  }
-  
-  .timeAgo {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  .sideArticles {
-    padding-left: 20px;
-  }
-  
-  .sideArticle {
-    display: flex;
-    align-items: start;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .sideImage {
-    border-radius: 5px;
-  }
-  
-  .sideContent {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .sideTitle {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .profileInfo {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .timeAgo {
-    font-size: 12px;
-    color: #888;
-  }
-  
+}
+
+.mainArticle {
+  border-right: 1px solid #d9d9d9;
+  padding-right: 20px;
+}
+
+.mainImageContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 4px 8px;
+  color: #fff;
+}
+
+.likes,
+.comments {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mainContent {
+  margin-top: 10px;
+  align-items: left;
+}
+
+.profileInfo {
+  padding: 0;
+  margin-left: 10px;
+  width: 180px;
+  margin-left: -1px;
+}
+
+.profileImage {
+  border-radius: 50%;
+  margin-left: -10px;
+}
+
+.author {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: -20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  width: 500px;
+  margin-left: 0;
+}
+
+.timeAgo {
+  font-size: 12px;
+  color: #888;
+}
+
+.sideArticles {
+  padding-left: 20px;
+}
+
+.sideArticle {
+  display: flex;
+  align-items: start;
+  margin-bottom: 15px;
+}
+
+.sideImage {
+  border-radius: 10px;
+}
+
+.sideContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideTitle {
+  font-size: 12px;
+  font-weight: 200;
+  background-color: red;
+  margin: 0;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  margin-left: -10px;
+}
+
+.timeAgo {
+  font-size: 12px;
+  color: #888;
+}
