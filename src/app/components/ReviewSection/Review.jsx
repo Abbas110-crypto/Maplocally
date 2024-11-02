@@ -1,5 +1,3 @@
-// src/components/Review.js
-
 import { Row, Col, Rate } from 'antd';
 import Image from 'next/image';
 import styles from './Review.module.css';
@@ -27,10 +25,19 @@ const Review = () => {
                 { title: 'Service', rating: 5 },
                 { title: 'Organization', rating: 5 },
               ].map((item, index) => (
-                <div key={index} className={styles.summaryItem}>
-                  <span>{item.title}</span>
-                  <Rate value={item.rating} disabled className={styles.stars} />
-                </div>
+                <Row key={index} className={styles.summaryItem}>
+                  <Col span={8}>
+                    <span>{item.title}</span>
+                  </Col>
+                  <Col span={16}>
+                    <Rate
+                      value={item.rating}
+                      disabled
+                      className={styles.stars}
+                      style={{ fontSize: 20, padding: '0' }}
+                    />
+                  </Col>
+                </Row>
               ))}
             </div>
           </div>

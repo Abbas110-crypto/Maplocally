@@ -7,9 +7,42 @@ import Feedback from '../components/Feedback/Feedback';
 import FaqSection from "../components/FAQ's/faq";
 import Gallery from '../components/Gallery/Gallery';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
-import MightAlsoLike from '../components/MightAlsoLike/MightAlsoLike';
 import styles from './page.module.css'
-const PostDetail = () => {
+import ArticleCard from '../components/ArticleCard/ArticleCard';
+import ArticleSection from '../components/ArticleSection/ArticleSection';
+import SeperateArticle from '../components/SeperateArticle/SeperateArticle';
+import ArticleHero from '../components/ArticleHero/ArticleHero'
+const Articles = () => {
+    const articlesData = [
+        {
+            title: "The 50 best cities in the world right now",
+            description: "Every year we rank the very greatest cities in the world, based on a survey of thousands of locals",
+            coverImage: "https://i.ibb.co/YN7YvmW/image-6.png",
+            profileImage: "https://i.ibb.co/njhtKpt/Ellipse-17.png",
+            profileName: "Rabia Aslam",
+            date: "2022/09/24",
+            views: "10k",
+        },
+        {
+            title: "Top destinations for 2023",
+            description: "Explore the most popular travel destinations to visit next year.",
+            coverImage: "https://i.ibb.co/YN7YvmW/image-6.png",
+            profileImage: "https://i.ibb.co/njhtKpt/Ellipse-17.png",
+            profileName: "John Doe",
+            date: "2023/01/01",
+            views: "8.5k",
+        },
+        {
+            title: "Best food cities around the globe",
+            description: "Discover cities that are renowned for their food culture and delicious cuisines.",
+            coverImage: "https://i.ibb.co/YN7YvmW/image-6.png",
+            profileImage: "https://i.ibb.co/njhtKpt/Ellipse-17.png",
+            profileName: "Jane Smith",
+            date: "2023/05/10",
+            views: "15k",
+        },
+    ];
+
     const placeData = {
         title: "Brief about the place",
         sections: [
@@ -24,20 +57,16 @@ const PostDetail = () => {
     };
     return (
         <div>
-            <Gallery />
+            <ArticleHero/>
+            <ArticleSection/>
+            <SeperateArticle/>
             <Aboutplace title={placeData.title} sections={placeData.sections} />
-
-            <h2 className={styles.hd}> Tour Information</h2>
-            <Tourinfo />
-
-            <Experience />
-            <MightAlsoLike />
-            <Review />
-            <TravelSignup />
+            <ArticleCard articles={articlesData} />
             <Feedback />
-            <FaqSection />
+
         </div>
     )
 }
 
-export default PostDetail;
+
+export default Articles;

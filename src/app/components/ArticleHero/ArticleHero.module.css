@@ -10,14 +10,15 @@
   width: 100%;
   margin-top: 8%;
   max-width: 1200px;
-  height: 500px;
+  height: 500px; /* Make height flexible for better responsiveness */
   position: relative;
-  overflow: hidden; 
+  overflow: hidden; /* Hide any overflow caused by image adjustments */
 }
 
 .heroImage {
   margin-top: -15px;
   width: 100%;
+  /* border-radius: 10px; */
   height: 100%;
   object-fit: cover;
   position: absolute;
@@ -37,23 +38,21 @@
 .heading {
   margin-top: 20px;
   padding-bottom: 10px;
-  margin-left: -80px;
   font-size: 35px;
-  width: 800px;
   font-family: 'Mona Sans', sans-serif;
 }
 
 .paragraph {
   line-height: 20px;
-  font-size: 20px;
   font-family: 'Mona Sans', sans-serif;
   margin: 0 auto;
 }
 
+/* Search bar..... */
 .searchbar {
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 450px;
   font-family: 'Mona Sans', sans-serif;
   margin: 20px auto;
   z-index: 2;

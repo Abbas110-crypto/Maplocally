@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
 import PostRow from '../PostRow/PostRow';
-import styles from './Sightsvisit.module.css'
-function Sightsvisit() {
+import styles from './MightAlsoLike.module.css'
+function MightAlsoLike() {
     const posts1 = [
       { id: 1, title: "Niagara Falls Tour", category: "tour", price: 94, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Nature', 'Waterfall'] , description: "Attraction passes. NewYork"},
       { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
@@ -38,4 +38,4 @@ function Sightsvisit() {
   )
 }
 
-export default Sightsvisit
+export default MightAlsoLike

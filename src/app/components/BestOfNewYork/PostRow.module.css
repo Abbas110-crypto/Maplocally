@@ -80,9 +80,9 @@
 .tag {
   font-size: 12px;
   color: #4c8ca5;
-  border-color: #4c8ca5;
-  background-color: #f0f8ff;;
-  border-radius: 10px; /* Adjust border radius if desired */
+  border: none;
+  background-color: #e8f3fc;;
+  border-radius: 5px; /* Adjust border radius if desired */
 }
 
 /* Arrow button styles */

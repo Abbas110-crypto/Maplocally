@@ -40,17 +40,22 @@
 .arrowIcon {
     margin-left: 10px;
     background-color: white;
-    border-radius: 5px;
-    padding-top: 2px;
-    width: 20px;
-    height: 20px;
+    border-radius: 20px;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
 }
 
 /* Center the images */
 .imageGrid {
+<<<<<<< HEAD
     max-width: 900px;
     margin: 0 auto;
 
+=======
+    max-width: 850px; /* Ensure it stays within the page width */
+    margin: 0 auto; /* Center the whole grid container */
+>>>>>>> a89e8b0b378376f5f1db0d2dafd3a8669b8eb9c4
 }
 
 .image {
@@ -63,9 +68,15 @@
 
 .imageWrapper {
     position: relative;
+<<<<<<< HEAD
   }
   
   .heartIcon {
+=======
+}
+
+.heartIcon {
+>>>>>>> a89e8b0b378376f5f1db0d2dafd3a8669b8eb9c4
     position: absolute;
     top: 10px;
     right: 10px;
@@ -73,9 +84,22 @@
     height: 30px;
     cursor: pointer;
     transition: filter 0.3s ease;
+<<<<<<< HEAD
   }
   
   .heartFilled {
     filter: invert(1) brightness(1); /* Turns the inner part of the heart white */
   }
   
+=======
+}
+
+/* Filled heart icon style */
+.heartFilled {
+    filter: brightness(0) invert(1); /* Makes the heart icon white */
+}
+
+.heartIcon:hover {
+    filter: brightness(1.2);
+}
+>>>>>>> a89e8b0b378376f5f1db0d2dafd3a8669b8eb9c4
