@@ -200,4 +200,12 @@
   background-color:white; /* Same as the header background */
 }
 
-
+.categoryoption {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  margin: 0;
+}
+.categoryoption input[type="checkbox"] {
+  margin-right: 8px;
+}
