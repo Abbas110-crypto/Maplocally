@@ -1,14 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Select,
-  InputNumber,
-  Slider,
-} from "antd";
+import { Select, InputNumber, Slider } from "antd";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "antd/dist/reset.css";
-import "./Sidebar.css";
+import styles from "./Sidebar.module.css";
 
 const { Option } = Select;
 
@@ -58,7 +54,7 @@ const Sidebar = () => {
   const renderOption = (option) => {
     const isChecked = filters.category.includes(option.value);
     return (
-      <label className="categoryoption">
+      <label className={styles.categoryoption}>
         <input
           type="checkbox"
           checked={isChecked}
@@ -74,9 +70,8 @@ const Sidebar = () => {
     );
   };
 
-
   return (
-    <div className="sidebar">
+    <div className={styles.sidebar}>
       <h3>Category</h3>
       <Select
         mode="multiple"
@@ -84,22 +79,20 @@ const Sidebar = () => {
         style={{ width: "100%" }}
         onChange={handleCategoryChange}
         placeholder="Select Categories"
-        className="customselect"
+        className={styles.customselect}
         dropdownRender={(menu) => (
           <div>
             {options.map((option) => (
               <div
-                className="categoryoption"
+                className={styles.categoryoption}
                 key={option.value}
                 onClick={() => {
-                  const newCategories = filters.category.includes(
-                    option.value
-                  )
+                  const newCategories = filters.category.includes(option.value)
                     ? filters.category.filter((cat) => cat !== option.value)
                     : [...filters.category, option.value];
                   handleCategoryChange(newCategories);
                 }}
-                style={{ padding: "4px 12px", textAlign: "left" }} // Align and add padding
+                style={{ padding: "4px 12px", textAlign: "left" }}
               >
                 {renderOption(option)}
               </div>
@@ -120,11 +113,16 @@ const Sidebar = () => {
         onChange={(date) => handleDateChange(date)}
         dateFormat="dd/MM/yyyy"
         placeholderText="Select Date"
-        className="custom-datepicker"
+        className={styles.customdatepicker} // This ensures the CSS is applied
       />
 
+
       <h3>How many people</h3>
-      <InputNumber min={1} value={filters.people} onChange={handlePeopleChange} />
+      <InputNumber
+        min={1}
+        value={filters.people}
+        onChange={handlePeopleChange}
+      />
 
       <h3>Price</h3>
       <InputNumber
@@ -134,7 +132,12 @@ const Sidebar = () => {
         onChange={handlePriceChange}
         style={{ width: "100%", marginTop: 10 }}
       />
-      <Slider min={100} max={2000} value={filters.price} onChange={handleSliderChange} />
+      <Slider
+        min={100}
+        max={2000}
+        value={filters.price}
+        onChange={handleSliderChange}
+      />
     </div>
   );
 };
