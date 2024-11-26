@@ -1,5 +1,21 @@
 /* Card Row Container */
 .cardRowContainer {
+    position: relative;
+    width: 85%;
+    margin-left: 5%;
+  }
+  
+  /* Card Row Styling */
+  .cardRow {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    gap: 10px; 
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
   position: relative;
   width: 85%;
   margin-left: 5%;
@@ -136,17 +152,39 @@
   }
 
   .cardTitle {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    overflow-wrap: break-word; /* Ensures long words break to the next line */
+    word-wrap: break-word;     /* For compatibility with older browsers */
+    word-break: break-word;    /* Ensures text will break at the end of a line */
+  }
+  
+  .cardDescription {
+    font-size: 12px;
+    color: #989898;
+    margin: 10px 0px 0 0;
     font-size: 14px;
   }
 
   .price {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    margin: 0px 0 0;
     font-size: 12px;
   }
 
   .arrowButton {
     font-size: 18px;
     padding: 6px;
+  }  
+  .arrowButton.left {
+    left: -50px;
   }
+  
+  .arrowButton.right {
+    right: -50px;
 }
 
 @media (max-width: 480px) {
