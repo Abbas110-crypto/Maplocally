@@ -1,137 +1,102 @@
 .mainSection {
-  margin-top: 150px;
+  margin-top: 50px;
   margin-left: 3%;
+  margin-right: 3%;
+}
+.hd{
+  margin-bottom: 30px;
+  margin-left: 1%;
+}
+.leftArticleCard{
+  margin: 0;
 }
 
-.articleComponent {
-  padding: 20px;
-  margin-top: 3%;
+.leftArticleCard, .rightArticleCard {
+  border-radius: 10px;
+  overflow: hidden; 
+  padding: 0; 
 }
 
-.hd {
-  margin: 10px;
-  font-size: 30px;
-  font-weight: 500;
 
-}
-
-.mainArticle {
-  border-right: 1px solid #d9d9d9;
-  padding-right: 20px;
-}
-
-.mainImageContainer {
-  position: relative;
+.leftArticleCard .articleImage {
   width: 100%;
+  height: 100px;
   height: auto;
-  border-radius: 10px;
-  overflow: hidden;
+  display: block; 
 }
 
-.mainImage {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+.leftArticleCard .cardContent {
+  padding: 10px;
 }
 
-.overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  align-items: center;
+.leftArticleCard .profileInfo {
+  margin-bottom: 5px;
 }
 
-.stats {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  padding: 4px 8px;
-  color: #fff;
-}
-
-.likes,
-.comments {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.mainContent {
-  margin-top: 10px;
-  align-items: left;
-}
-
-.profileInfo {
-  padding: 0;
-  margin-left: 10px;
-  width: 180px;
-  margin-left: -1px;
-}
-
-.profileImage {
+.leftArticleCard .profileImage {
   border-radius: 50%;
-  margin-left: -10px;
+
 }
 
-.author {
+.leftArticleCard .author {
   font-size: 14px;
-  font-weight: 400;
-  margin-left: -20px;
+  font-weight: 500;
+  margin-left: 10px;
 }
 
-.title {
+.leftArticleCard .title {
   font-size: 18px;
   font-weight: bold;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
-.description {
+.leftArticleCard .description {
   font-size: 14px;
   color: #555;
-  width: 500px;
-  margin-left: 0;
 }
 
-.timeAgo {
+.leftArticleCard .timeAgo {
   font-size: 12px;
   color: #888;
 }
 
-.sideArticles {
-  padding-left: 20px;
+.rightArticleCard .articleImage {
+  width: 100%; 
+  height: auto;
+  display: block;
+
 }
 
-.sideArticle {
-  display: flex;
-  align-items: start;
-  margin-bottom: 15px;
+.rightArticleCard .cardContent {
+  padding: 12px; 
 }
 
-.sideImage {
-  border-radius: 10px;
+.rightArticleCard .profileInfo {
+  margin-bottom: 5px;
 }
 
-.sideContent {
-  display: flex;
-  flex-direction: column;
+.rightArticleCard .profileImage {
+  border-radius: 50%;
 }
 
-.sideTitle {
-  font-size: 12px;
-  font-weight: 200;
-  background-color: red;
-  margin: 0;
+.rightArticleCard .author {
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 12px;
 }
 
-.profileInfo {
-  display: flex;
-  align-items: center;
-  margin-left: -10px;
+.rightArticleCard .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
 }
 
-.timeAgo {
-  font-size: 12px;
+.rightArticleCard .description {
+  font-size: 16px;
+  color: #555;
+}
+
+.rightArticleCard .timeAgo {
+  font-size: 13px;
   color: #888;
 }

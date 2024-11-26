@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import styles from './ArticleHero.module.css';
-import { Row, Col } from 'antd';
-import { CiSearch } from 'react-icons/ci';
+import styles from './Hero.module.css';
+import { Row, Col } from 'antd'; 
+import { CiSearch } from 'react-icons/ci'; 
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -28,12 +28,12 @@ const SearchBar = () => {
   );
 };
 
-const ArticleHero = () => {
+const Hero = () => {
   return (
     <div className={styles.main}>
       <div className={styles.herosection}>
         <img
-          src="https://i.ibb.co/jhpn6wS/Group-2-1.png"
+          src="https://i.ibb.co/xXHsZy7/image-11.png"
           alt="Hero Background"
           className={styles.heroImage}
         />
@@ -41,39 +41,25 @@ const ArticleHero = () => {
         <div className={styles.content}>
           <Row justify="center" align="middle">
             <Col
-              xs={22}
-              sm={20}
-              md={16}
-              lg={12}
-
-            >
-              <SearchBar />
-            </Col>
-          </Row>
-          <Row justify="center" align="middle">
-            <Col
-              xs={22}
-              sm={20}
-              md={18}
-              lg={16}
-
+              xs={22} 
+              sm={20}  
+              md={18}  
+              lg={16} 
+          
             >
               <h1 className={styles.heading}>
-                <ul className={styles.hashtagList}>
-                  <li>#Trending News</li>
-                  <li>#Social media</li>
-                  <li>#Mailing</li>
-                  <li>#Manusipi</li>
-                </ul>
+                Top 10 listening bars in NewYork
               </h1>
-
-
+              <p className={styles.paragraph}>
+              From a Taiwanese restaurant in the East Village to a spicy Thai goto in Brooklyn, here&apos;s where to eat in the city right now
+              </p>
             </Col>
           </Row>
+       
         </div>
       </div>
     </div>
   );
 };
 
-export default ArticleHero;
+export default Hero;
