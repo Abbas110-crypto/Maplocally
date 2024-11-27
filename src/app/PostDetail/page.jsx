@@ -7,7 +7,8 @@ import Feedback from '../components/Feedback/Feedback';
 import FaqSection from "../components/FAQ's/faq";
 import Gallery from '../components/Gallery/Gallery';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
-import Sightsvisit from '../components/Sightsvisit/Sightsvisit';
+import MightAlsoLike from '../components/MightAlsoLike/MightAlsoLike';
+import styles from './page.module.css'
 const PostDetail = () => {
     const placeData = {
         title: "Brief about the place",
@@ -23,16 +24,18 @@ const PostDetail = () => {
     };
     return (
         <div>
-            <Gallery/>
+            <Gallery />
             <Aboutplace title={placeData.title} sections={placeData.sections} />
 
+            <h2 className={styles.hd}> Tour Information</h2>
             <Tourinfo />
-            <Experience/>
-            <Sightsvisit/>
-            <Review/>
-            <TravelSignup/>
-            <Feedback/>
-            <FaqSection/>
+
+            <Experience />
+            <MightAlsoLike />
+            <Review />
+            <TravelSignup />
+            <Feedback />
+            <FaqSection />
         </div>
     )
 }

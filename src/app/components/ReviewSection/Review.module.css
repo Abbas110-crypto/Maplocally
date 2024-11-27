@@ -1,88 +1,81 @@
 .reviewContainer {
-    width: 100%;
-    padding: 20px 0;
-    margin-top: 100px;
-    margin-left: -18px;
-  }
-  
-  .row {
-    width: 90%;
-    margin: 0 auto; /* Center the content */
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .leftSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
-  .rightSection {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100%;
-    margin-right: 0; /* Ensure no right margin */
-    padding-right: 0; /* Remove padding on the right */
-    width: 100%; /* Set width to full for flexbox alignment */
-  }
-  
-  .customerReviews {
-    width: 100%;
-  }
-  
-  .heading {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  
-  .overallRating {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-left: -40px;
-    gap: 15px; /* Adjust the gap between overall rating and stars */
-  }
- 
-  
-  .stars {
-    display: flex;
-    align-items: center; /* Ensure vertical alignment */
-    color: #fadb14; /* Star color */
-  }
-  
-  .ratingValue {
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .reviewsCount {
-    color: #888;
-  }
-  
-  .reviewSummary {
-    margin-top: 20px;
-  }
-  
-  .summaryItem {
-    display: flex;
-    width: 100%;
-    margin-top: 5px; /* Reduce margin-top to decrease spacing between items */
-  }
-  
-  /* Remove extra margin between title and stars */
-  .summaryItem > span {
-    margin-left: 0; /* Ensure no left margin */
-  }
-  
-  .summaryItem .stars {
- 
-    margin-left: -600px; /* Adjust this value to reduce the space between text and stars */
-  }
-  
-  .planeImageContainer {
-    margin-right: -100px; /* Reduce this for responsiveness */
-  }
-  
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 100px;
+  margin-left: -18px;
+}
+
+.row {
+  width: 90%;
+  margin: 0 auto; /* Center the content */
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.rightSection {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  padding-right: 0;
+  width: 100%;
+}
+
+.customerReviews {
+  width: 100%;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.overallRating {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: -40px;
+  gap: 15px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  color: #fadb14;
+  gap: 2px; /* Reduce gap to bring stars closer */
+}
+
+.ratingValue {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.reviewsCount {
+  color: #888;
+}
+
+.reviewSummary {
+  margin-top: 20px;
+}
+
+.summaryItem {
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.summaryItem > span {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.planeImageContainer {
+  margin-right: -100px;
+}

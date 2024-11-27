@@ -19,7 +19,7 @@
 }
 
 .center {
-  flex: 4;
+  flex: 1;
   text-align: start;
 }
 
@@ -34,7 +34,25 @@
 .navLinks li {
   display: inline;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 10px;
+  width: 120px;
+  text-align: center;
+
+}
+.languageMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white; /* Set the background of the dropdown */
+}
+
+.languageMenu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.languageMenu li:hover {
+  background-color: #f0f0f0; /* Add hover effect */
 }
 
 .navLinks a {
@@ -72,6 +90,28 @@
 .logo {
   margin-left: 3%;
 }
+.languageMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.languageMenu li {
+  padding: 10px 20px;
+}
+
+.languageMenu li a {
+  color: #484848;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.languageMenu li a:hover {
+  color: #1978A8;
+}
+
 
 @media (min-width: 350px) and (max-width: 500px) {
   .navLinks {

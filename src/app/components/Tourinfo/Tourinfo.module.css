@@ -1,3 +1,6 @@
+.tourinfo{
+  margin-bottom: 100px;
+}
 .detailRow {
     display: flex;
     align-items: flex-start;  /* Align items at the top (left) */

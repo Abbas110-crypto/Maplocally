@@ -28,8 +28,7 @@ const Tourinfo = () => {
   ];
 
   return (
-    <Row gutter={[16, 16]}>
-    <h2 className={styles.hd}> Tour Information</h2>
+    <Row className={styles.tourinfo} gutter={[16, 16]}>
       {details.map((detail, index) => (
         <Col key={index} span={24}>
           <div className={styles.detailRow}>

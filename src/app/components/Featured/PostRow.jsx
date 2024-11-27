@@ -74,8 +74,7 @@ const PostRow = ({ posts }) => {
                 <img
                   src="https://i.ibb.co/XYTSfLC/Group-48101322.png"
                   alt="Custom image"
-                  className={styles.customImage} // Add this style in CSS for the custom image
-                />
+                  className={styles.customImage}                 />
                 <p className={styles.price}>From US$ {post.price}</p>
               </div>
             </div>
