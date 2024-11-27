@@ -1,0 +1,25 @@
+.faqsection {
+  background-color: white;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+.faqheading{
+  text-align: left;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 25px;
+}
+.faqheading span{
+  color: orange;
+}
+:where(.css-dev-only-do-not-override-1hpnbz2) .ant-collapse{
+  color: bisque;
+  width: 80% !important;
+}
+.panel{
+  background-color: white;
+
+}
+.question{
+  font-weight: 500;
+}
