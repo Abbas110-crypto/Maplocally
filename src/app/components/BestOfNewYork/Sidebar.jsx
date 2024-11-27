@@ -114,7 +114,7 @@ const Sidebar = () => {
         ))}
       </Select>
 
-      <h3>When are you going?</h3>
+      <h3>When are you going??</h3>
       <DatePicker
         selected={filters.date}
         onChange={(date) => handleDateChange(date)}

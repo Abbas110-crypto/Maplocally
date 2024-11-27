@@ -167,8 +167,6 @@
   text-align: left;
   flex-grow: 1;
 }
-
-/* this class is for category options which are showing in dropdown menu */
 .categoryoption {
   text-align: left;
   margin: 0 !important;
@@ -182,15 +180,12 @@
   border-radius: 4px;
   font-size: 14px;
 }
-/* CSS for React DatePicker Customization */
 
-/* Change the background color of the date picker header */
 .react-datepicker__header {
   background-color: white; /* Change this to your desired color */
   border-bottom: none; /* Optional: Removes the bottom border if needed */
 }
 
-/* Customize the current month text (e.g., October 2024) */
 .react-datepicker__current-month {
   color: #333; /* Optional: Change this to the text color you want */
 }

@@ -1,11 +1,10 @@
-// src/components/Gallery.js
-
 import { Row, Col, Button } from 'antd';
 import Image from 'next/image';
-import styles from './Gallery.module.css'; // For custom CSS
+import styles from './Gallery.module.css'; 
 
 const Gallery = () => {
   return (
+
     <div className={styles.container}>
       <div className={styles.heading}>
         <h1>Niagara Falls Tour from NYC</h1>
