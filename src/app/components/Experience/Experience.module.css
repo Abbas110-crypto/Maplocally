@@ -5,7 +5,7 @@
     max-width: 1000px;
     margin: 20px 0;
     margin-left: 2%;
-    margin-top: 5% ;
+    margin-top: 5%;
 }
 
 .title {
@@ -23,9 +23,7 @@
 }
 
 .label {
-    /* flex: 0 0 auto; */
     text-align: left;
-    
     font-weight: 600;
     font-size: 16px;
     font-family: 'Mona Sans', sans-serif;
@@ -47,13 +45,12 @@
     margin: 0;
     height: 150px;
     margin-left: 50px;
-
 }
 
-.highlightList{
+.highlightList {
     margin-left: 30px;
-
 }
+
 .list li {
     display: flex;
     align-items: center;
@@ -102,13 +99,13 @@
     margin-top: 0; /* eliminate any top margin */
 }
 
-.impList{
+.impList {
     padding-top: 5px; /* adjust if you need a little space */
     margin-top: 0;
     margin-left: 58px;
-   
 }
-.list li{
+
+.list li {
     padding-left: 10px;
 }
 
@@ -131,4 +128,80 @@
 
 .ant-col {
     padding: 0 10px;
+}
+
+/* Responsive Styles for Small Screens (<550px) */
+@media (max-width: 550px) {
+    .container {
+        padding: 15px;
+        margin-left: 2%;
+        margin-top: 10%;
+    }
+
+    .title {
+        font-size: 20px; /* Smaller title font size */
+        margin-bottom: 10px;
+    }
+
+    .section {
+        flex-direction: column; /* Stack content vertically */
+        margin-bottom: 20px;
+padding-bottom: 20px;    }
+
+    .label {
+        margin-top: 10px;
+        font-size: 14px; /* Smaller label font */
+        margin-bottom: 10px;
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .content {
+        text-align: left;
+        margin: 10px 0;
+    }
+
+    .list {
+        padding-left: 10px;
+        margin-left: 0; /* Remove unnecessary left margin */
+        font-size: 14px; /* Adjust font size for lists */
+    }
+
+    .para {
+        font-size: 12px; /* Smaller font size for paragraphs */
+        margin-left: 0;
+        padding-left: 0;
+        height: auto;
+    }
+
+    .link {
+        font-size: 14px; /* Adjust link size */
+    }
+
+    .subtitle {
+        font-size: 14px; /* Adjust subtitle size */
+        margin-left: 0;
+    }
+
+    .infosec {
+        margin-left: 0; /* Remove the left margin */
+    }
+
+    .impList {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .includesList li {
+        font-size: 14px; /* Adjust font size for includes list */
+    }
+
+    .ant-col {
+        padding: 0 5px; /* Reduce padding for smaller screens */
+    }
+
+    .highlightList li,
+    .impList li,
+    .includesList li {
+        padding-left: 20px; /* Adjust padding for better spacing */
+    }
 }

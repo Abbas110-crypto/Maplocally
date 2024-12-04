@@ -8,7 +8,84 @@ import Location from '../components/Location/Location';
 import TravelSignup from '../components/TravelSignin/TravelSignup';
 import DirectionPost from '../components/DirectionPost/DirectionPost';
 import styles from "./page.module.css"
-const Direction = () => {
+import { useState,useEffect } from 'react';
+import axios from "axios";
+
+const Direction = ({searchParams}) => {
+    const id = searchParams?.id; // Get the `id` from searchParams if available
+    const [fetchedProduct, setFetchedProduct] = useState(null);
+    const [fetchError, setFetchError] = useState(null);
+
+    const [details, setDetails] = useState([
+        {
+            image: "https://i.ibb.co/555Rvxy/Group-48101161.png", // Duration image URL
+            title: "Duration",
+            description: "Check availability", // Placeholder, will be updated dynamically
+        },
+        {
+            image: "https://i.ibb.co/8z1SrhM/Group-48101165.png", // Live tour image URL
+            title: "Language",
+            description: "French", // Placeholder, will be updated dynamically
+        },
+        {
+            image: "https://i.ibb.co/VL0rbqd/Group-48101160.png", // Pickup optional image URL
+            title: "Pickup optional",
+            description: "Pickup details will be updated dynamically", // Placeholder
+        },
+        {
+            image: "https://i.ibb.co/x5LYGrY/Group-48101166.png", // Small group image URL
+            title: "Small group",
+            description: "Limited to participants", // Placeholder
+        },
+    ]);
+
+    useEffect(() => {
+        if (!id) return;
+
+        const fetchProduct = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3002/api/get-product/${id}`);
+                if (response.data.success) {
+                    const productData = response.data.data; // Extract the product data
+                    console.log('Fetched Product:', productData); // Log the entire product
+                    setFetchedProduct(productData); // Update state with fetched product
+
+                    // Update details array based on fetched product data
+                    setDetails((prevDetails) => [
+                        {
+                            ...prevDetails[0],
+                            description: productData.tourDuration || "Check availability", // Tour duration
+                        },
+                        {
+                            ...prevDetails[1],
+                            description: productData.tourLanguage || "French", // Tour language
+                        },
+                        {
+                            ...prevDetails[2],
+                            description: productData.pickupOption || "Pickup details not available", // Pickup option
+                        },
+                        {
+                            ...prevDetails[3],
+                            description: `Limited to ${productData.groupSize || "participants"}`, // Small group size
+                        },
+                    ]);
+                } else {
+                    console.error('API returned success=false:', response.data);
+                    setFetchError('Failed to fetch product data.');
+                }
+            } catch (err) {
+                console.error('Error fetching product:', err.message);
+                setFetchError(err.message);
+            }
+        };
+
+        fetchProduct();
+    }, [id]);
+
+    if (!fetchedProduct) {
+        return <div>Loading...</div>; // Show loading message until product data is available
+    }
+
     const location = {
         name: 'Hilton Hotel Niagara Falls',
         city: 'Niagara Falls',
@@ -78,14 +155,20 @@ const Direction = () => {
             <div style={{ padding: '20px' }}>
                 <Location location={location} recommendations={recommendations} />
             </div>
-            <Aboutplace title={placeData.title} sections={placeData.sections} />
+            <Aboutplace
+                title="Brief about the place"
+                sections={[fetchedProduct?.briefDescription || ""]}
+            />
             <h2 className={styles.hd} >You may also like</h2>
             <DirectionPost posts={post1} />
-            <Tourinfo />
+                    <Tourinfo details={details} />
+
             <DirectionPost posts={post2} />
-            <Tourinfo />
+                    <Tourinfo details={details} />
+
             <DirectionPost posts={post3} />
-            <Tourinfo />
+                    <Tourinfo details={details} />
+
 
 
             <TravelSignup />

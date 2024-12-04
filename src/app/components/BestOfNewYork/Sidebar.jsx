@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Select, InputNumber, Slider } from "antd";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,36 +7,21 @@ import styles from "./Sidebar.module.css";
 
 const { Option } = Select;
 
-const Sidebar = () => {
-  const [filters, setFilters] = useState({
-    category: [],
-    date: null,
-    people: 1,
-    price: 1000,
-  });
-
+const Sidebar = ({ filters, onFiltersChange }) => {
   const handleCategoryChange = (value) => {
-    console.log("Categories selected:", value);
-    setFilters({ ...filters, category: value });
+    onFiltersChange({ ...filters, category: value });
   };
 
   const handleDateChange = (date) => {
-    console.log("Date changed:", date);
-    setFilters({ ...filters, date });
+    onFiltersChange({ ...filters, date });
   };
 
   const handlePeopleChange = (value) => {
-    console.log("People count changed:", value);
-    setFilters({ ...filters, people: value });
+    onFiltersChange({ ...filters, people: value === 0 ? "any" : value });
   };
 
   const handlePriceChange = (value) => {
-    console.log("Price changed:", value);
-    setFilters({ ...filters, price: value });
-  };
-
-  const handleSliderChange = (value) => {
-    setFilters({ ...filters, price: value });
+    onFiltersChange({ ...filters, priceRange: value });
   };
 
   const options = [
@@ -54,7 +38,7 @@ const Sidebar = () => {
   const renderOption = (option) => {
     const isChecked = filters.category.includes(option.value);
     return (
-      <label className={styles.categoryoption}>
+      <label className={styles.categoryoption} key={option.value}>
         <input
           type="checkbox"
           checked={isChecked}
@@ -70,6 +54,8 @@ const Sidebar = () => {
     );
   };
 
+  const priceRangeString = `$${filters.priceRange[0]}- $${filters.priceRange[1]}`;
+
   return (
     <div className={styles.sidebar}>
       <h3>Category</h3>
@@ -80,29 +66,11 @@ const Sidebar = () => {
         onChange={handleCategoryChange}
         placeholder="Select Categories"
         className={styles.customselect}
-        dropdownRender={(menu) => (
-          <div>
-            {options.map((option) => (
-              <div
-                className={styles.categoryoption}
-                key={option.value}
-                onClick={() => {
-                  const newCategories = filters.category.includes(option.value)
-                    ? filters.category.filter((cat) => cat !== option.value)
-                    : [...filters.category, option.value];
-                  handleCategoryChange(newCategories);
-                }}
-                style={{ padding: "4px 12px", textAlign: "left" }}
-              >
-                {renderOption(option)}
-              </div>
-            ))}
-          </div>
-        )}
+        dropdownRender={() => <div>{options.map((option) => renderOption(option))}</div>}
       >
         {options.map((option) => (
           <Option key={option.value} value={option.value} style={{ display: "none" }}>
-            {renderOption(option)}
+            {option.label}
           </Option>
         ))}
       </Select>
@@ -110,33 +78,43 @@ const Sidebar = () => {
       <h3>When are you going?</h3>
       <DatePicker
         selected={filters.date}
-        onChange={(date) => handleDateChange(date)}
+        onChange={handleDateChange}
         dateFormat="dd/MM/yyyy"
         placeholderText="Select Date"
-        className={styles.customdatepicker} // This ensures the CSS is applied
+        className={styles.customdatepicker}
       />
-
 
       <h3>How many people</h3>
       <InputNumber
-        min={1}
+        min={0}
         value={filters.people}
         onChange={handlePeopleChange}
+        style={{ width: "100%" }}
       />
 
       <h3>Price</h3>
-      <InputNumber
-        min={100}
-        max={2000}
-        value={filters.price}
-        onChange={handlePriceChange}
-        style={{ width: "100%", marginTop: 10 }}
-      />
+      <div className={styles.priceInputWrapper}>
+        <InputNumber
+          value={priceRangeString}
+          readOnly
+          style={{
+            width: "100%",
+            borderRadius: "4px",
+            textAlign: "center",
+          }}
+        />
+      </div>
       <Slider
-        min={100}
+        range
+        min={0}
         max={2000}
-        value={filters.price}
-        onChange={handleSliderChange}
+        value={filters.priceRange}
+        onChange={handlePriceChange}
+        tooltip={{
+          formatter: (value) => `$${value}`,
+        }}
+        step={50}
+        style={{ marginTop: "20px" }}
       />
     </div>
   );

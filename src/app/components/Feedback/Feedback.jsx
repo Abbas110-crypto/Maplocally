@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'antd'; // Import Row and Col from Ant Design
+import { Row, Col, Rate } from 'antd'; // Import Rate from Ant Design
 import styles from './Feedback.module.css';
 
 const testimonials = [
@@ -35,13 +35,13 @@ const testimonials = [
 
 const Feedback = () => {
   return (
-    <div className={styles.testimonialssection}>
-      <h2>Why People <span className={styles.highlight}>Love</span> New York</h2>
+    <div className={styles.testimonialssection} id='feedback'>
+      <h2>
+        Why People <span className={styles.highlight}>Love</span> New York
+      </h2>
       <Row gutter={[16, 16]} className={styles.testimonialscontainer} wrap={false}>
         {testimonials.map((testimonial, index) => (
-          <Col 
-            key={index} 
-            className={styles.testimonialcardContainer}>
+          <Col key={index} className={styles.testimonialcardContainer}>
             <div className={styles.testimonialcard}>
               <div className={styles.testimonialheader}>
                 <img
@@ -57,7 +57,7 @@ const Feedback = () => {
               <p className={styles.testimonialreview}>{testimonial.review}</p>
               <p className={styles.testimonialdesc}>{testimonial.desc}</p>
               <div className={styles.testimonialrating}>
-                {"⭐".repeat(testimonial.rating)}
+                <Rate value={testimonial.rating} disabled className={styles.stars} />
               </div>
             </div>
           </Col>

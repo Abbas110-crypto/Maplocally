@@ -1,7 +1,7 @@
 .cardRowContainer {
   position: relative;
   width: 85%;
-  margin-left: 5%;
+  margin-left: 6.5%;
 }
 
 .cardRow {
@@ -9,6 +9,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
+  height: 400px;
   max-width: 100%;
   gap: 10px; 
   -ms-overflow-style: none;
@@ -20,13 +21,14 @@
 }
 
 .customCard {
-  width: 360px;
-  height: 370px;
+  width: 350px;
+  height: 360px;
   flex: 0 0 auto;
-  border: 1px solid rgb(158, 157, 157);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05), /* Lighter bottom shadow */
+  0px -2px 6px rgba(0, 0, 0, 0);   /* No top shadow */
   border-radius: 8px;
   overflow: hidden;
-  margin: 20px 15px 0 0;
+  margin: 0 15px 0 10px; /* Remove any card margins */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -71,13 +73,12 @@
 
 .arrowButton {
   background-color: white;
-  opacity: 0.4;
-  color: black;
+  color: grey;
   border: none;
   padding: 10px;
   cursor: pointer;
   font-size: 24px;
-  border-radius: 50%;
+  border-radius: 100px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -85,11 +86,11 @@
 }
 
 .arrowButton.left {
-  left: -50px;
+  left: 5px;
 }
 
 .arrowButton.right {
-  right: -50px;
+  right: 25px;
 }
 
 .arrowButton:hover {
@@ -144,11 +145,11 @@
   }
 
   .customCard {
-    min-width: 150px;
+    min-width: 130px;
   }
 
   .cardImage {
-    height: 100px;
+    height: 250px;
   }
 
   .cardTitle {

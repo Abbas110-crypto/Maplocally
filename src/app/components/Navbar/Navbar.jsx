@@ -102,17 +102,17 @@ const Navbar = () => {
             </Dropdown>
           </li>
           <li>
-            <Link href="/help">{t('help')}</Link>
+            <Link href="/Contact">{t('Contact')}</Link>
           </li>
           <li>
-            <Link href="/recently-viewed">{t('recently viewed')}</Link>
+            <Link href="/recently-viewed">{t('Recently viewed')}</Link>
           </li>
           <li>
-            <Link href="/signup">{t('signup')}</Link>
+            <Link href="/signup">{t('Signup')}</Link>
           </li>
           <li>
             <Link href="/login">
-              <Button className={styles.loginbtn}>{t('login')}</Button>
+              <Button className={styles.loginbtn}>{t('Login')}</Button>
             </Link>
           </li>
         </ul>
@@ -147,17 +147,17 @@ const Navbar = () => {
               </Dropdown>
             </li>
             <li>
-              <Link href="/help">{t('help')}</Link>
+              <Link href="/contact">{t('Contact')}</Link>
             </li>
             <li>
-              <Link href="/recently-viewed">{t('recently viewed')}</Link>
+              <Link href="/recently-viewed">{t('Recently viewed')}</Link>
             </li>
             <li>
-              <Link href="/signup">{t('signup')}</Link>
+              <Link href="/signup">{t('Signup')}</Link>
             </li>
             <li>
               <Link href="/login">
-                <Button className={styles.loginbtn}>{t('login')}</Button>
+                <Button className={styles.loginbtn}>{t('Login')}</Button>
               </Link>
             </li>
           </ul>

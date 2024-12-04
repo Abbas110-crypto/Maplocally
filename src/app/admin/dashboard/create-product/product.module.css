@@ -1,9 +1,12 @@
 /* ProductForm.module.css */
 .container {
     display: flex;
+    margin: 3%;
+    margin-top: 10%;
   }
   
   .formContainer {
+    margin-top: 4%;
     flex: 1;
     padding: 20px;
     margin-left: 280px; /* Adjust if necessary to offset the sidebar */

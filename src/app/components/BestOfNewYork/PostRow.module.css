@@ -1,8 +1,8 @@
 /* Card Row Container */
 .cardRowContainer {
   position: relative;
-  width: 52%;
-  margin-left: -20px;
+  width: 920px;
+  margin-left: -50px;
 }
 
 /* Card Row Styling */
@@ -11,8 +11,9 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
-  max-width: 100%;
+  width: 100%;
   gap: 10px; 
+  height: 400px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -23,15 +24,18 @@
 
 /* Custom Card Styling */
 .customCard {
-  width: 360px;
-  height: 370px;
+  width: 350px;
+  height: 360px;
   flex: 0 0 auto;
-  border: 1px solid rgb(158, 157, 157);
-  border-radius: 8px;
+  border: none; /* Remove the border */
+  border-radius: 8px; /* Rounded corners */
   overflow: hidden;
-  margin: 20px 15px 0 0; /* Remove any card margins */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px 15px 0 5px; /* Remove any card margins */
+  box-shadow: 
+  0px 4px 6px rgba(0, 0, 0, 0.05), /* Lighter bottom shadow */
+  0px -2px 6px rgba(0, 0, 0, 0);   /* No top shadow */
 }
+
 
 /* Image Styling */
 .cardImage {
@@ -88,13 +92,12 @@
 /* Arrow button styles */
 .arrowButton {
   background-color: white;
-  opacity: 0.4;
-  color: black;
+  color: grey;
   border: none;
   padding: 10px;
   cursor: pointer;
   font-size: 24px;
-  border-radius: 50%;
+  border-radius: 100%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -102,11 +105,11 @@
 }
 
 .arrowButton.left {
-  left: -50px;
+  left: 5px;
 }
 
 .arrowButton.right {
-  right: -50px;
+  right: 0px;
 }
 
 .arrowButton:hover {

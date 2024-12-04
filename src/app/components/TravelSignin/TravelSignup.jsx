@@ -4,6 +4,7 @@ import styles from './TravelSignup.module.css';
 
 const TravelSignup = () => {
   return (
+    <>
     <div className={styles.signupContainer}>
       {/* Background Image Element */}
       <div className={styles.backgroundImage}>
@@ -39,12 +40,13 @@ const TravelSignup = () => {
         </Col>
       </Row>
 
+    </div>
       {/* Terms and Conditions */}
       <p className={styles.terms}>
         By signing up, you agree to receive promotional emails on activities and insider tips. 
         You can unsubscribe or withdraw your consent at any time with future effect.
       </p>
-    </div>
+    </>
   );
 };
 

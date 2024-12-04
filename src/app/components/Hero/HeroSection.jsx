@@ -33,7 +33,7 @@ const Hero = () => {
     <div className={styles.main}>
       <div className={styles.herosection}>
         <img
-          src="https://i.ibb.co/j6cfnjQ/Group-1000003418.png"
+          src="https://i.ibb.co/cJgB1ky/Group-1000003434.png"
           alt="Hero Background"
           className={styles.heroImage}
         />

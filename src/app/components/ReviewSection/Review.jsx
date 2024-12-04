@@ -1,8 +1,13 @@
+"use client"
 import { Row, Col, Rate } from 'antd';
 import Image from 'next/image';
 import styles from './Review.module.css';
-
+import {useRouter} from 'next/navigation'
 const Review = () => {
+  const router = useRouter()
+  const handlereview=()=>{
+    router.push('#feedback')
+  }
   return (
     <div className={styles.reviewContainer}>
       <Row className={styles.row}>
@@ -14,7 +19,7 @@ const Review = () => {
               <span className={styles.label}>Overall rating</span>
               <span className={styles.ratingValue}>4.2/5</span>
               <Rate allowHalf defaultValue={4.2} disabled className={styles.stars} />
-              <span className={styles.reviewsCount}>152 Reviews</span>
+              <span className={styles.reviewsCount}>152 <span className={styles.reviewspan} onClick={handlereview}> Reviews</span> </span>
             </div>
             <div className={styles.reviewSummary}>
               <h4 className={styles.heading}>Review Summary</h4>

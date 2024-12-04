@@ -26,8 +26,9 @@
   width: 360px;
   height: 370px;
   flex: 0 0 auto;
-  border: 1px solid rgb(158, 157, 157);
-  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05), /* Lighter bottom shadow */
+  0px -2px 6px rgba(0, 0, 0, 0);   /* No top shadow */  border-radius: 8px;
+  margin: 0 15px 0 10px; /* Remove any card margins */
   overflow: hidden;
   margin: 20px 15px 0 0; /* Remove any card margins */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -157,6 +158,8 @@
 }
 
 @media (max-width: 480px) {
+  
+  
   .cardRow {
     gap: 5px; /* Reduce gap for mobile screens */
   }
@@ -166,7 +169,7 @@
   }
 
   .cardImage {
-    height: 100px; /* Adjust image height for mobile */
+    height: 230px; /* Adjust image height for mobile */
   }
 
   .cardTitle {

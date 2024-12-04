@@ -3,7 +3,7 @@ import styles from './PostRow.module.css';
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Row, Col, Tag } from 'antd';
-
+import { useRouter } from 'next/router';
 const PostRow = ({ posts }) => {
   const rowRef = useRef(null);
   const [isScrollable, setIsScrollable] = useState(false);
@@ -52,6 +52,7 @@ const PostRow = ({ posts }) => {
     };
   }, []);
 
+  
   return (
     <div className={styles.cardRowContainer}>
       {isScrollable && scrollPos > 0 && (
@@ -66,11 +67,11 @@ const PostRow = ({ posts }) => {
       )}
       <div className={styles.cardRow} ref={rowRef}>
         {posts.map((post) => (
-          <Link href={`/PostDetail?id=${post.id}`} key={post.id} passHref>
-            <div className={styles.customCard}>
-              <img src={post.img} alt={post.title} className={styles.cardImage} />
+          <Link href={`/PostDetail?id=${post._id}`} key={post.id} passHref>
+            <div  className={styles.customCard}>
+              <img src={post.productImages[0]} alt={post.title} className={styles.cardImage} />
               <div className={styles.cardContent}>
-                <p className={styles.cardDescription}>{post.description}</p>
+                <p className={styles.cardDescription}>{post.subTitle}</p>
                 <h3 className={styles.cardTitle}>{post.title}</h3>
                 <div className={styles.tagContainer}>
                   {post.tags.map((tag, index) => (

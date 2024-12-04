@@ -1,40 +1,45 @@
-import React, { useRef } from 'react';
-import styles from './PostSection.module.css'; // Import the CSS module
-import PostRow from './PostRow'
-const PostSection = () => {
-  const posts1 = [
-    { id: 1, title: "Niagara Falls Tour", category: "tourist route", price: 94, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Easy refund', 'instant confirmation'] , description: "Attraction passes. NewYork"},
-    { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
-    { id: 3, title: "NYC Park Tour", category: "park", price: 100, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Outdoor', 'Walking'], description: "Attraction passes. NewYork" },
-    { id: 4, title: "Central Park Picnic", category: "park", price: 75, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Outdoor', 'Picnic'] , description: "Attraction passes. NewYork" },
-    { id: 5, title: "Central Park Picnic", category: "park", price: 75, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Outdoor', 'Picnic'] , description: "Attraction passes. NewYork" },
-    { id: 5, title: "Central Park Picnic", category: "park", price: 75, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Outdoor', 'Picnic'] , description: "Attraction passes. NewYork" },
-  
-      
-  ];
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import styles from "./PostSection.module.css";
+import PostRow from "./PostRow";
 
-  const posts2 = [
-    { id: 1, title: "Niagara Falls Tour", category: "tour", price: 94, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Nature', 'Waterfall'] , description: "Attraction passes. NewYork"},
-    { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
-    { id: 3, title: "NYC Park Tour", category: "park", price: 100, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Outdoor', 'Walking'], description: "Attraction passes. NewYork" },
-    { id: 4, title: "Central Park Picnic", category: "park", price: 75, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Outdoor', 'Picnic'] , description: "Attraction passes. NewYork" },
-    ];
+const PostSection = ({ filters }) => {
+  const [posts1, setPosts1] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
 
-  const posts3 = [
-    { id: 1, title: "Niagara Falls Tour", category: "tour", price: 94, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Nature', 'Waterfall'] , description: "Attraction passes. NewYork"},
-    { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
-    { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
-    { id: 2, title: "Broadway Show", category: "broadway", price: 120, img: 'https://i.ibb.co/XDTkpvb/images.jpg', tags: ['Theater', 'Musical'], description: "Attraction passes. NewYork" },
-  
-  ];
+  useEffect(() => {
+    const fetchFilteredProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3002/api/product-filter", {
+          params: {
+            category: filters.category.join(","),
+            minPrice: filters.priceRange[0],
+            maxPrice: filters.priceRange[1],
+            people: filters.people === "any" ? undefined : filters.people,
+            date: filters.date ? filters.date.toISOString().split("T")[0] : null,
+          },
+        });
 
+        const data = Array.isArray(response.data.data) ? response.data.data : [];
+        const chunkSize = Math.ceil(data.length / 3);
+        setPosts1(data.slice(0, chunkSize));
+        setPosts2(data.slice(chunkSize, chunkSize * 2));
+        setPosts3(data.slice(chunkSize * 2));
+      } catch (error) {
+        console.error("Failed to fetch filtered products:", error);
+      }
+    };
+
+    fetchFilteredProducts();
+  }, [filters]);
 
   return (
     <div className={styles.postSection}>
       <h2 className={styles.title}>The Best of New York&apos;s</h2>
       <PostRow posts={posts1} />
       <PostRow posts={posts2} />
-      <PostRow posts={posts3} /> {/* Add more PostRow components as needed */}
+      <PostRow posts={posts3} />
     </div>
   );
 };
