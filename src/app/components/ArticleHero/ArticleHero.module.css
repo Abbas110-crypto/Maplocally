@@ -20,9 +20,9 @@
 }
 
 .heroImage {
-  width: 1168px;
-  height: 200px;
-  object-fit: cover;
+  width: 100%;
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Ensures the image is cropped proportionally */
   position: absolute;
   top: 0;
   left: 0;
@@ -137,51 +137,82 @@
 
 @media (max-width: 768px) {
   .herosection {
-    height: auto;
-    padding: 0 5%;
+    height: auto; /* Allows content to dictate height */
+    padding: 10px 5%; /* Adjust padding for smaller screens */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .heroImage {
+    width: 100%; /* Ensure it takes up full width */
+    height: 200px; /* Maintain consistent height */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  .content {
+    padding: 0 5%; /* Reduce padding for better fit */
+    text-align: center;
   }
 
   .heading {
-    font-size: 26px;
-    padding-top: 15%;
+    font-size: 22px; /* Adjust heading size */
+    margin-top: 10px; /* Add spacing for visual separation */
   }
 
-  .paragraph {
-    font-size: 16px;
-  }
-
-  .searchbar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .herosection {
-    height: auto;
-    padding: 10 5%;
-  }
-
-  .heading {
-    font-size: 22px;
-    padding-top: 20%;
-  }
-
-  .paragraph {
-    font-size: 14px;
-    line-height: 18px;
+  .hashtagList li {
+    font-size: 14px; /* Reduce font size for tags */
+    margin-right: 10px; /* Adjust spacing between tags */
   }
 
   .searchbar {
-    width: 100%;
+    width: 90%; /* Take most of the screen width */
+    margin-top: 20px; /* Add spacing for readability */
   }
 
   .input {
-    height: 45px;
-    font-size: 14px;
+    height: 50px; /* Reduce height for smaller screens */
+    font-size: 14px; /* Adjust font size */
   }
 
   .searchButton {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
+  }
+}
+@media (max-width: 480px) {
+  
+
+
+  .content {
+    padding: 0 5%; /* Adjust padding for better readability */
+  }
+
+  
+  .paragraph {
+    font-size: 12px; /* Slightly smaller text for mobile */
+    line-height: 1.5; /* Improve readability */
+  }
+
+  .hashtagList {
+    font-size: 12px; /* Reduce tag size */
+    margin-top: 10px; /* Add spacing above tags */
+  }
+
+  .searchbar {
+    width: 100%; /* Adjust to fit the screen */
+    margin-top: 38px; /* Space above the search bar */
+    margin-bottom: 0;
+  }
+
+  .input {
+    font-size: 14px; /* Adjust font size for smaller input fields */
+    height: 45px; /* Reduce height for mobile */
+  }
+
+  .searchButton {
+    width: 28px; /* Smaller button size */
+    height: 28px;
+    margin-bottom: 20px;
+    margin-right: -10px;
+    margin-left: 10px;
   }
 }

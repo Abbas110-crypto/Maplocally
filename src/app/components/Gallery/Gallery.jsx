@@ -1,12 +1,11 @@
 "use client"; // Make sure this is at the top
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, Skeleton, Carousel } from "antd"; // Import Carousel
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Import from next/navigation
 import styles from "./Gallery.module.css";
 
-const Gallery = ({ id }) => {
-  // Receive `id` as a prop
+const Gallery = ({ id, loading }) => {
   const [filledHearts, setFilledHearts] = useState([false, false, false, false, false]);
   const router = useRouter(); // Initialize useRouter
 
@@ -26,6 +25,30 @@ const Gallery = ({ id }) => {
       console.error("ID is missing. Cannot navigate to direction.");
     }
   };
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <Skeleton.Input active style={{ width: 300, height: 40, marginBottom: 16 }} />
+        <Skeleton active paragraph={{ rows: 2 }} />
+        <Skeleton.Button active style={{ width: 150, height: 45, margin: "16px 0" }} />
+
+        <Row className={styles.imageGrid} gutter={[16, 16]}>
+          <Col xs={24} md={8}>
+            <Skeleton.Image active style={{ width: 280, height: 180, marginBottom: 16 }} />
+            <Skeleton.Image active style={{ width: 280, height: 220, marginBottom: 16 }} />
+          </Col>
+          <Col xs={24} md={8}>
+            <Skeleton.Image active style={{ width: 280, height: 250, marginBottom: 16 }} />
+            <Skeleton.Image active style={{ width: 280, height: 150, marginBottom: 16 }} />
+          </Col>
+          <Col xs={24} md={8}>
+            <Skeleton.Image active style={{ width: 280, height: 400, marginBottom: 16 }} />
+          </Col>
+        </Row>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>
@@ -54,8 +77,64 @@ const Gallery = ({ id }) => {
         </Button>
       </div>
 
+      {/* Slider for screen sizes less than 950px */}
+      <div className={styles.sliderWrapper}>
+        <Carousel className={styles.carousel} dots={false}>
+          <div>
+            <Image
+              src="https://i.ibb.co/9rxzbLD/image.png"
+              alt="right-column-img-1"
+              layout="intrinsic"
+              width={1200}
+              height={800}
+              className={styles.image}
+            />
+          </div>
+          <div>
+            <Image
+              src="https://i.ibb.co/vzBSvF3/image-1.png"
+              alt="right-column-img-2"
+              layout="intrinsic"
+              width={1200}
+              height={800}
+              className={styles.image}
+            />
+          </div>
+          <div>
+            <Image
+              src="https://i.ibb.co/sHnBNKh/image-2.png"
+              alt="middle-column-img-1"
+              layout="intrinsic"
+              width={1200}
+              height={800}
+              className={styles.image}
+            />
+          </div>
+          <div>
+            <Image
+              src="https://i.ibb.co/NttQ8XV/Rectangle-2279.png"
+              alt="middle-column-img-2"
+              layout="intrinsic"
+              width={1200}
+              height={800}
+              className={styles.image}
+            />
+          </div>
+          <div>
+            <Image
+              src="https://i.ibb.co/0rx2Fft/image-3.png"
+              alt="left-column-img"
+              layout="intrinsic"
+              width={1200}
+              height={800}
+              className={styles.image}
+            />
+          </div>
+        </Carousel>
+      </div>
+
+      {/* Regular Grid for larger screens */}
       <Row className={styles.imageGrid} gutter={[16, 16]}>
-        {/* Right Column */}
         <Col className={styles.customCol} xs={24} md={8}>
           <div className={styles.imageWrapper}>
             <Image
@@ -77,7 +156,6 @@ const Gallery = ({ id }) => {
           </div>
         </Col>
 
-        {/* Middle Column */}
         <Col className={styles.customCol} xs={24} md={8}>
           <div className={styles.imageWrapper}>
             <Image
@@ -99,7 +177,6 @@ const Gallery = ({ id }) => {
           </div>
         </Col>
 
-        {/* Left Column */}
         <Col className={styles.customCol} xs={24} md={8}>
           <div className={styles.imageWrapper}>
             <Image

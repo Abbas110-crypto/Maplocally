@@ -11,56 +11,64 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.heading h1 {
+  }
+  
+  .heading {
+    max-width: 850px;  /* Set the width of the heading section to match the gallery width */
+    margin: 0 auto;     /* Center the heading */
+  }
+  
+  .heading h1 {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 16px;
-}
-
-.heading p {
+  }
+  
+  .heading p {
     font-size: 18px;
     color: #666;
     margin-bottom: 32px;
-    width: 800px;
-}
-
-.buttonContainer {
+    width: 100%;         /* Ensure the paragraph width is 100% of the container */
+  }
+  
+  .buttonContainer {
     margin-bottom: 40px;
-}
-
-.directionButton {
+  }
+  
+  .directionButton {
     background-image: linear-gradient(to right, #0A2F42, #1978A8);
     border-color: #00bfff;
     display: flex;
     align-items: center;
-}
-
-.arrowIcon {
+  }
+  
+  .arrowIcon {
     margin-left: 10px;
     background-color: white;
     border-radius: 100%;
     width: 25px;
     height: 25px;
- }
-
-/* Center the images */
-.imageGrid {
-    max-width: 850px; /* Ensure it stays within the page width */
-    margin: 0 auto; /* Center the whole grid container */
-}
-
-.image {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.imageWrapper {
+  }
+  
+  .imageGrid {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  
+  .imageWrapper {
     position: relative;
-}
-
-.heartIcon {
+  }
+  
+  /* Make sure the images fill the container in the slider */
+  .image {
+    object-fit: cover; /* Ensures the image covers the entire container */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Heart icon style */
+  .heartIcon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -68,13 +76,46 @@
     height: 30px;
     cursor: pointer;
     transition: filter 0.3s ease;
-}
-
-/* Filled heart icon style */
-.heartFilled {
-    filter: brightness(0) invert(1); /* Makes the heart icon white */
-}
-
-.heartIcon:hover {
+  }
+  
+  .heartFilled {
+    filter: brightness(0) invert(1);
+  }
+  
+  .heartIcon:hover {
     filter: brightness(1.2);
-}
+  }
+  
+  /* Slider for screen sizes less than 950px */
+  @media (max-width: 950px) {
+    .imageGrid {
+      display: none; /* Hide the grid */
+    }
+  
+    .sliderWrapper {
+      width: 100%;
+      height: 100%; /* Full height */
+    }
+  
+    .carousel .slick-slide {
+      text-align: center;
+      display: inline-block;
+      height: 100%; /* Full height */
+    }
+  
+    .carousel .slick-list {
+      height: 100%; /* Full height */
+    }
+  
+    .carousel .slick-track {
+      height: 100%; /* Full height */
+    }
+  }
+  
+  /* Grid for larger screens */
+  @media (min-width: 951px) {
+    .sliderWrapper {
+      display: none; /* Hide the slider */
+    }
+  }
+  

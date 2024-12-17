@@ -41,7 +41,6 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
-  margin-left: -40px;
   gap: 15px;
 }
 .reviewspan{
@@ -51,7 +50,7 @@
   display: flex;
   align-items: center;
   color: #fadb14;
-  gap: 2px; /* Reduce gap to bring stars closer */
+  gap: 0px; /* Reduce gap to bring stars closer */
 }
 
 .ratingValue {

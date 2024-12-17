@@ -15,6 +15,7 @@ const Direction = ({searchParams}) => {
     const id = searchParams?.id; // Get the `id` from searchParams if available
     const [fetchedProduct, setFetchedProduct] = useState(null);
     const [fetchError, setFetchError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const [details, setDetails] = useState([
         {
@@ -39,6 +40,7 @@ const Direction = ({searchParams}) => {
         },
     ]);
 
+   
     useEffect(() => {
         if (!id) return;
 
@@ -46,46 +48,43 @@ const Direction = ({searchParams}) => {
             try {
                 const response = await axios.get(`http://localhost:3002/api/get-product/${id}`);
                 if (response.data.success) {
-                    const productData = response.data.data; // Extract the product data
-                    console.log('Fetched Product:', productData); // Log the entire product
-                    setFetchedProduct(productData); // Update state with fetched product
+                    const productData = response.data.data;
+                    setFetchedProduct(productData);
 
-                    // Update details array based on fetched product data
                     setDetails((prevDetails) => [
                         {
                             ...prevDetails[0],
-                            description: productData.tourDuration || "Check availability", // Tour duration
+                            description: productData.tourDuration || "Check availability",
                         },
                         {
                             ...prevDetails[1],
-                            description: productData.tourLanguage || "French", // Tour language
+                            description: productData.tourLanguage || "French",
                         },
                         {
                             ...prevDetails[2],
-                            description: productData.pickupOption || "Pickup details not available", // Pickup option
+                            description: productData.pickupOption || "Pickup details not available",
                         },
                         {
                             ...prevDetails[3],
-                            description: `Limited to ${productData.groupSize || "participants"}`, // Small group size
+                            description: `Limited to ${productData.groupSize || "participants"}`,
                         },
                     ]);
                 } else {
-                    console.error('API returned success=false:', response.data);
-                    setFetchError('Failed to fetch product data.');
+                    setFetchError("Failed to fetch product data.");
                 }
             } catch (err) {
-                console.error('Error fetching product:', err.message);
                 setFetchError(err.message);
+            } finally {
+                setLoading(false); // End loading state
             }
         };
 
         fetchProduct();
     }, [id]);
 
-    if (!fetchedProduct) {
-        return <div>Loading...</div>; // Show loading message until product data is available
+    if (!fetchedProduct && !loading) {
+        return <div>Error: {fetchError || "No product found."}</div>;
     }
-
     const location = {
         name: 'Hilton Hotel Niagara Falls',
         city: 'Niagara Falls',
@@ -157,21 +156,22 @@ const Direction = ({searchParams}) => {
             </div>
             <Aboutplace
                 title="Brief about the place"
-                sections={[fetchedProduct?.briefDescription || ""]}
+                sections={fetchedProduct?.briefDescription ? [fetchedProduct.briefDescription] : []}
+                loading={loading}
             />
             <h2 className={styles.hd} >You may also like</h2>
             <DirectionPost posts={post1} />
-                    <Tourinfo details={details} />
+            <Tourinfo details={details} loading={loading} />
 
             <DirectionPost posts={post2} />
-                    <Tourinfo details={details} />
+            <Tourinfo details={details} loading={loading} />
 
             <DirectionPost posts={post3} />
-                    <Tourinfo details={details} />
+            <Tourinfo details={details} loading={loading} />
 
 
 
-            <TravelSignup />
+            {/* <TravelSignup /> */}
             <Feedback />
             <FaqSection />
         </div>

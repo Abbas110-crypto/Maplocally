@@ -7,9 +7,14 @@ const PostSection = ({ filters }) => {
   const [posts1, setPosts1] = useState([]);
   const [posts2, setPosts2] = useState([]);
   const [posts3, setPosts3] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchFilteredProducts = async () => {
+      setLoading(true); // Start loading
+
+      const startTime = Date.now(); // Record start time
+
       try {
         const response = await axios.get("http://localhost:3002/api/product-filter", {
           params: {
@@ -28,6 +33,13 @@ const PostSection = ({ filters }) => {
         setPosts3(data.slice(chunkSize * 2));
       } catch (error) {
         console.error("Failed to fetch filtered products:", error);
+      } finally {
+        const elapsedTime = Date.now() - startTime; // Calculate elapsed time
+        const remainingTime = Math.max(0, 1000 - elapsedTime); // Ensure at least 1s duration
+
+        setTimeout(() => {
+          setLoading(false); // Stop loading after the remaining time
+        }, remainingTime);
       }
     };
 
@@ -37,9 +49,9 @@ const PostSection = ({ filters }) => {
   return (
     <div className={styles.postSection}>
       <h2 className={styles.title}>The Best of New York&apos;s</h2>
-      <PostRow posts={posts1} />
-      <PostRow posts={posts2} />
-      <PostRow posts={posts3} />
+      <PostRow posts={posts1} loading={loading} />
+      <PostRow posts={posts2} loading={loading} />
+      <PostRow posts={posts3} loading={loading} />
     </div>
   );
 };

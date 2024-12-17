@@ -20,13 +20,11 @@ const ArticleSection = () => {
       <h2 className={styles.hd}>Articles</h2>
       <Row gutter={16} className={styles.articleComponent}>
         {/* Left Side (Main Article) */}
-        <Col xs={24} md={12} className={styles.leftArticleCard}>
+        <Col xs={24} md={24} lg={12} className={styles.leftArticleCard}>
           <div className={styles.imageContainer}>
             <Image
               src={mainArticle.coverImage}
               alt="Main article image"
-              width={550}
-              height={400}
               preview={false}
               className={styles.articleImage}
             />
@@ -49,13 +47,11 @@ const ArticleSection = () => {
         </Col>
 
         {/* Right Side (Identical to Left Side but Wider) */}
-        <Col xs={24} md={12} className={styles.rightArticleCard}>
+        <Col xs={24} md={24} lg={12} className={styles.rightArticleCard}>
           <div className={styles.imageContainer}>
             <Image
               src={mainArticle.coverImage}
               alt="Main article image"
-              width={600}
-              height={400}
               preview={false}
               className={styles.articleImage}
             />

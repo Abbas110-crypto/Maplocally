@@ -37,8 +37,8 @@ const ProductList = () => {
     router.push("/admin/dashboard/create-product");
   };
 
-  const handleEdit = (product) => {
-    setEditProduct(product); // Set the selected product for editing
+  const handleEdit = (productId) => {
+    router.push(`/admin/dashboard/create-product?id=${productId}`);
   };
   const handleView = (productId) => {
     router.push(`/admin/dashboard/view-product/${productId}`);
@@ -139,7 +139,7 @@ const ProductList = () => {
                         <button className={styles.viewBtn} onClick={() => handleView(product._id)}>
                           View
                         </button>
-                        <button className={styles.editBtn} onClick={() => handleEdit(product)}>
+                        <button className={styles.editBtn} onClick={() => handleEdit(product._id)}>
                           Edit
                         </button>
                         <button

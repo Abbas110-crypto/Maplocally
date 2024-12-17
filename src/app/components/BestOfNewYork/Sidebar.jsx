@@ -1,5 +1,5 @@
-import React from "react";
-import { Select, InputNumber, Slider } from "antd";
+import React, { useState, useEffect } from "react";
+import { Skeleton, Select, InputNumber, Slider } from "antd";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "antd/dist/reset.css";
@@ -8,6 +8,14 @@ import styles from "./Sidebar.module.css";
 const { Option } = Select;
 
 const Sidebar = ({ filters, onFiltersChange }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate an API call with a timeout
+    const timer = setTimeout(() => setLoading(false), 1000); // Minimum 2s skeleton display
+    return () => clearTimeout(timer); // Cleanup timer
+  }, []);
+
   const handleCategoryChange = (value) => {
     onFiltersChange({ ...filters, category: value });
   };
@@ -56,6 +64,54 @@ const Sidebar = ({ filters, onFiltersChange }) => {
 
   const priceRangeString = `$${filters.priceRange[0]}- $${filters.priceRange[1]}`;
 
+  // Custom Skeleton for Sidebar
+  const renderSkeleton = () => (
+    <div className={styles.sidebar}>
+      <h3>
+        <Skeleton.Input style={{ width: "150px", height: "24px" }} active />
+      </h3>
+      <Skeleton.Input
+        style={{ width: "100%", height: "40px", marginBottom: "20px" }}
+        active
+      />
+
+      <h3>
+        <Skeleton.Input style={{ width: "200px", height: "24px" }} active />
+      </h3>
+      <Skeleton.Input
+        style={{ width: "100%", height: "40px", marginBottom: "20px" }}
+        active
+      />
+
+      <h3>
+        <Skeleton.Input style={{ width: "150px", height: "24px" }} active />
+      </h3>
+      <Skeleton.Input
+        style={{ width: "100%", height: "40px", marginBottom: "20px" }}
+        active
+      />
+
+      <h3>
+        <Skeleton.Input style={{ width: "80px", height: "24px" }} active />
+      </h3>
+      <Skeleton.Input
+        style={{ width: "100%", height: "40px", marginBottom: "10px" }}
+        active
+      />
+      <Skeleton
+        title={false}
+        paragraph={{ rows: 1, width: "100%" }}
+        active
+        style={{ marginBottom: "20px" }}
+      />
+    </div>
+  );
+
+  if (loading) {
+    return renderSkeleton();
+  }
+
+  // Render actual Sidebar content once loading is complete
   return (
     <div className={styles.sidebar}>
       <h3>Category</h3>

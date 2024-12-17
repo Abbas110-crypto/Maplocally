@@ -39,7 +39,7 @@ const Review = () => {
                       value={item.rating}
                       disabled
                       className={styles.stars}
-                      style={{ fontSize: 20, padding: '0' }}
+                      // style={{ fontSize: 20, padding: '-10px' }}
                     />
                   </Col>
                 </Row>

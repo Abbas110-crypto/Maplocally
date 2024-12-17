@@ -56,7 +56,6 @@ const Articles = () => {
         <div>
             <ArticleHero/>
             <ArticleSection/>
-            <SeperateArticle/>
             <Aboutplace title={placeData.title} sections={placeData.sections} />
             <ArticleCard articles={articlesData} />
             <ArticleCard articles={articlesData} />

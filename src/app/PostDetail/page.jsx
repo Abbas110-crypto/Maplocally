@@ -8,34 +8,36 @@ import Review from "../components/ReviewSection/Review";
 import Feedback from "../components/Feedback/Feedback";
 import FaqSection from "../components/FAQ's/faq";
 import Gallery from "../components/Gallery/Gallery";
-import TravelSignup from "../components/TravelSignin/TravelSignup";
 import MightAlsoLike from "../components/MightAlsoLike/MightAlsoLike";
+import TravelSignup from "../components/TravelSignin/TravelSignup";
 import styles from "./page.module.css";
+
 const PostDetail = ({ searchParams }) => {
-    const id = searchParams?.id; // Get the `id` from searchParams if available
+    const id = searchParams?.id;
     const [fetchedProduct, setFetchedProduct] = useState(null);
     const [fetchError, setFetchError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const [details, setDetails] = useState([
         {
-            image: "https://i.ibb.co/555Rvxy/Group-48101161.png", // Duration image URL
+            image: "https://i.ibb.co/555Rvxy/Group-48101161.png",
             title: "Duration",
-            description: "Check availability", // Placeholder, will be updated dynamically
+            description: "Check availability",
         },
         {
-            image: "https://i.ibb.co/8z1SrhM/Group-48101165.png", // Live tour image URL
+            image: "https://i.ibb.co/8z1SrhM/Group-48101165.png",
             title: "Language",
-            description: "French", // Placeholder, will be updated dynamically
+            description: "French",
         },
         {
-            image: "https://i.ibb.co/VL0rbqd/Group-48101160.png", // Pickup optional image URL
+            image: "https://i.ibb.co/VL0rbqd/Group-48101160.png",
             title: "Pickup optional",
-            description: "Pickup details will be updated dynamically", // Placeholder
+            description: "Pickup details will be updated dynamically",
         },
         {
-            image: "https://i.ibb.co/x5LYGrY/Group-48101166.png", // Small group image URL
+            image: "https://i.ibb.co/x5LYGrY/Group-48101166.png",
             title: "Small group",
-            description: "Limited to participants", // Placeholder
+            description: "Limited to participants",
         },
     ]);
 
@@ -46,67 +48,68 @@ const PostDetail = ({ searchParams }) => {
             try {
                 const response = await axios.get(`http://localhost:3002/api/get-product/${id}`);
                 if (response.data.success) {
-                    const productData = response.data.data; // Extract the product data
-                    console.log('Fetched Product:', productData); // Log the entire product
-                    setFetchedProduct(productData); // Update state with fetched product
+                    const productData = response.data.data;
+                    setFetchedProduct(productData);
 
-                    // Update details array based on fetched product data
                     setDetails((prevDetails) => [
                         {
                             ...prevDetails[0],
-                            description: productData.tourDuration || "Check availability", // Tour duration
+                            description: productData.tourDuration || "Check availability",
                         },
                         {
                             ...prevDetails[1],
-                            description: productData.tourLanguage || "French", // Tour language
+                            description: productData.tourLanguage || "French",
                         },
                         {
                             ...prevDetails[2],
-                            description: productData.pickupOption || "Pickup details not available", // Pickup option
+                            description: productData.pickupOption || "Pickup details not available",
                         },
                         {
                             ...prevDetails[3],
-                            description: `Limited to ${productData.groupSize || "participants"}`, // Small group size
+                            description: `Limited to ${productData.groupSize || "participants"}`,
                         },
                     ]);
                 } else {
-                    console.error('API returned success=false:', response.data);
-                    setFetchError('Failed to fetch product data.');
+                    setFetchError("Failed to fetch product data.");
                 }
             } catch (err) {
-                console.error('Error fetching product:', err.message);
                 setFetchError(err.message);
+            } finally {
+                setLoading(false); // End loading state
             }
         };
 
         fetchProduct();
     }, [id]);
 
-    if (!fetchedProduct) {
-        return <div>Loading...</div>; // Show loading message until product data is available
+    if (!fetchedProduct && !loading) {
+        return <div>Error: {fetchError || "No product found."}</div>;
     }
 
     return (
         <div>
-            <Gallery id={fetchedProduct?._id || ""} />;
-
+            <Gallery id={fetchedProduct?._id || ""} loading={loading} />
             <Aboutplace
                 title="Brief about the place"
-                sections={[fetchedProduct.briefDescription]}
+                sections={fetchedProduct?.briefDescription ? [fetchedProduct.briefDescription] : []}
+                loading={loading}
             />
             <h2 className={styles.hd}>Tour Information</h2>
-            <Tourinfo details={details} />
+            <Tourinfo details={details} loading={loading} />
             <Experience
                 fullDescription={fetchedProduct?.fullDescription || ""}
                 highlights={fetchedProduct?.highlights || []}
                 includes={fetchedProduct?.includes || []}
-                meetingPoint={fetchedProduct?.meetingPoint || ""}
-            />
-            <MightAlsoLike />
+                meetingPoint={fetchedProduct?.meetingPoint || ""
+            }
+            loading={loading} 
+
+      />
+            <MightAlsoLike loading={loading} />
             <Review />
             <TravelSignup />
-            <Feedback />
-            <FaqSection />
+            <Feedback loading={loading} />
+            <FaqSection loading={loading} />
             {fetchError && <p className={styles.error}>Error fetching product: {fetchError}</p>}
         </div>
     );

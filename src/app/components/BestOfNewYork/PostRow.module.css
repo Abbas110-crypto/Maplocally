@@ -106,10 +106,13 @@
 
 .arrowButton.left {
   left: 5px;
+  z-index: 1000;
+
 }
 
 .arrowButton.right {
-  right: 0px;
+  right: 10px;
+  z-index: 1000;
 }
 
 .arrowButton:hover {
