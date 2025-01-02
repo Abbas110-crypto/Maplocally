@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Sidebar from "../../Sidebar/Sidebar";
-import Productform from "../create-product/page"; // Import the form
-import { Pagination } from "antd"; // Import Ant Design Pagination
-import styles from "./ProductList.module.css";
+import Productform from "../create-article/page"; 
+import { Pagination } from "antd"; 
+import styles from "./ArticleList.module.css";
+import api from '../../../axiosInterceptor/axiosInterceptor';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -19,7 +20,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3002/api/get-products", {
+        const response = await axios.get("http://localhost:3002/api/get-articles", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -34,14 +35,14 @@ const ProductList = () => {
   }, []);
 
   const handleAddNew = () => {
-    router.push("/admin/dashboard/create-product");
+    router.push("/admin/dashboard/create-article");
   };
 
   const handleEdit = (productId) => {
-    router.push(`/admin/dashboard/create-product?id=${productId}`);
+    router.push(`/admin/dashboard/create-article?id=${productId}`);
   };
   const handleView = (productId) => {
-    router.push(`/admin/dashboard/view-product/${productId}`);
+    router.push(`/admin/dashboard/view-article/${productId}`);
   };
   
   const handleDelete = async (productId) => {
@@ -49,7 +50,7 @@ const ProductList = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await axios.delete(`http://localhost:3002/api/delete-product/${productId}`, {
+      const response = await axios.delete(`http://localhost:3002/api/delete-article/${productId}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -92,7 +93,7 @@ const ProductList = () => {
       <Sidebar />
       <div className={styles.mainContent}>
         <div className={styles.header}>
-          <h1 className={styles.headerTitle}>Product List</h1>
+          <h1 className={styles.headerTitle}>Articles List</h1>
           <input
             type="text"
             placeholder="Search products..."
@@ -109,9 +110,9 @@ const ProductList = () => {
             <thead>
               <tr className={styles.tableRow}>
                 <th className={styles.tableHeader}>Product</th>
-                <th className={styles.tableHeader}>Category</th>
-                <th className={styles.tableHeader}>Product ID</th>
-                <th className={styles.tableHeader}>Price</th>
+                <th className={styles.tableHeader}>UserName</th>
+                <th className={styles.tableHeader}>Article ID</th>
+                <th className={styles.tableHeader}>User Image</th>
                 <th className={styles.tableHeader}>Created At</th>
                 <th className={styles.tableHeader}>Action</th>
               </tr>
@@ -123,16 +124,26 @@ const ProductList = () => {
                     <td className={styles.tableCell}>
                       <div className={styles.productInfo}>
                         <img
-                          src={product.productImages?.[0] || "/placeholder.png"}
+                          src={product.
+                            articleImage?.[0] || "/placeholder.png"}
                           alt={product.title}
                           className={styles.productImage}
                         />
                         <span>{product.title}</span>
                       </div>
                     </td>
-                    <td className={styles.tableCell}>{product.category || "N/A"}</td>
+                    <td className={styles.tableCell}>{product.userName || "N/A"}</td>
                     <td className={styles.tableCell}>{product._id}</td>
-                    <td className={styles.tableCell}>${product.price}</td>
+                    <td className={styles.tableCell}>
+                      <div>
+                      <img
+                          src={product.
+                            userImage?.[0] || "/placeholder.png"}
+                          alt={product.title}
+                          className={styles.productImage}
+                        />
+                      </div>
+                    </td>
                     <td className={styles.tableCell}>{product.date || "N/A"}</td>
                     <td className={styles.tableCell}>
                       <div className={styles.actionBtns}>

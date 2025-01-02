@@ -7,6 +7,7 @@ import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Flag from 'react-world-flags';
 import styles from './Navbar.module.css'; // Adjust path as needed
+import Image from 'next/image';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -86,7 +87,13 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.left}>
         <Link href="/">
-          <img src="https://i.ibb.co/HKMR9F8/maplocally.png" alt="Logo" className={styles.logo} />
+          <Image 
+          src="https://i.ibb.co/HKMR9F8/maplocally.png" 
+          alt="Logo" 
+          width={140}
+          height={60}
+          className={styles.logo} 
+          />
         </Link>
       </div>
       <div className={styles.center}>
@@ -102,16 +109,13 @@ const Navbar = () => {
             </Dropdown>
           </li>
           <li>
-            <Link href="/Contact">{t('Contact')}</Link>
-          </li>
-          <li>
             <Link href="/recently-viewed">{t('Recently viewed')}</Link>
           </li>
           <li>
-            <Link href="/signup">{t('Signup')}</Link>
+          <Link href="/contact">{t('Contact')}</Link>
           </li>
           <li>
-            <Link href="/login">
+            <Link href="/admin/login">
               <Button className={styles.loginbtn}>{t('Login')}</Button>
             </Link>
           </li>

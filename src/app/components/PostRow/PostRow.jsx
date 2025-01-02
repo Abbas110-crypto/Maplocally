@@ -66,15 +66,15 @@ const PostRow = ({ posts }) => {
       )}
       <div className={styles.cardRow} ref={rowRef}>
         {posts.map((post) => (
-          <Link href={`/PostDetail?id=${post.id}`} key={post.id} className={styles.link} passHref>
+          <Link href={`/PostDetail?id=${post._id}`} key={post.id} className={styles.link} passHref>
             <div className={styles.customCard}>
-              <img src={post.img} alt={post.title} className={styles.cardImage} />
+              <img src={post.productImages} alt={post.title} className={styles.cardImage} />
               <div className={styles.cardContent}>
-                <p className={styles.cardDescription}>{post.description}</p>
+                <p className={styles.cardDescription}>{post.briefDescription}</p>
                 <h3 className={styles.cardTitle}>{post.title}</h3>
                 <div className={styles.tagContainer}>
-                  {post.tags.map((tag, index) => (
-                    <Tag key={index} className={styles.tag}>{tag}</Tag>
+                  {post.tags.map((tags, index) => (
+                    <Tag key={index} className={styles.tag}>{tags}</Tag>
                   ))}
                 </div>
                 <p className={styles.price}>From US$ {post.price}</p>

@@ -29,14 +29,14 @@ function Sidebar() {
         className={styles.logo}
         />
         <ul className={styles.list}>
-        <li className={pathname === 'admin/dashboard/case-studies' ? styles.active : ''}>
-            <Link href='./case-studies'>Category</Link>
+        <li className={pathname === 'admin/dashboard/product-list' ? styles.active : ''}>
+            <Link href='./product-list'>All Products</Link>
           </li>
-          <li className={pathname === 'admin/dashboard/queries' ? styles.active : ''}>
-            <Link href='./queries'>Contact Us</Link>
+        <li className={pathname === 'admin/dashboard/featured-product-list' ? styles.active : ''}>
+            <Link href='./featured-product-list'>Featured Products </Link>
           </li>
-          <li className={pathname === 'admin/dashboard/product-list' ? styles.active : ''}>
-            <Link href='./product-list'>Product List</Link>
+          <li className={pathname === 'admin/dashboard/article-list' ? styles.active : ''}>
+            <Link href='./article-list'>Articles</Link>
           </li>
           <li>
             <button className={styles.logoutbtn} onClick={handleLogout}>Logout</button>

@@ -39,9 +39,8 @@ const Sidebar = ({ filters, onFiltersChange }) => {
     { value: "restaurants", label: "Restaurants" },
     { value: "bars", label: "Bars" },
     { value: "music", label: "Music" },
-    { value: "miscellaneous", label: "Miscellaneous" },
     { value: "tourist_routes", label: "Tourist Routes" },
-  ];
+  ]; 
 
   const renderOption = (option) => {
     const isChecked = filters.category.includes(option.value);
