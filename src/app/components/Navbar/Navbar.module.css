@@ -6,7 +6,7 @@
   background-color: white;
   padding: 10px 10px;
   z-index: 200;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
   position: fixed;
   width: 100%;
   top: 0;
@@ -16,9 +16,12 @@
 
 .left {
   flex: 7;
+  margin-top: 10px;
+
 }
 
 .center {
+  margin-top: 10px;
   flex: 1;
   text-align: start;
 }
@@ -106,11 +109,14 @@
 
   .left {
     flex: 3;
+    margin-top: 10px;
   }
 
   .center {
     flex: 8;
     text-align: start;
+    margin-top: 10px;
+
   }
 
   .navLinks {

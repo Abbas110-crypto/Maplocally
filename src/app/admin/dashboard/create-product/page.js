@@ -5,9 +5,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Form, Input, Button, message, Select, Space } from "antd";
 import axios from "axios";
 import dayjs from "dayjs";
-
+import styles from "../product-list/ProductList.module.css";
 const { TextArea } = Input;
 const { Option } = Select;
+import Sidebar from "../../Sidebar/Sidebar";
 
 
 const ProductForm = () => {
@@ -93,6 +94,7 @@ const ProductForm = () => {
           tourDate,
         });
         message.success("Product created successfully!");
+        router.push('product-list')
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -101,112 +103,124 @@ const ProductForm = () => {
   };
 
   return (
+
     <div>
-      <h1>{productId ? "Edit Product" : "Create Product"}</h1>
-      <Form form={form} onFinish={handleSubmit} layout="vertical">
-        {/* Basic Information */}
-        <Form.Item label="Title" name="title" rules={[{ required: true, message: "Please enter the title" }]}>
-          <Input placeholder="Enter product title" />
-        </Form.Item>
-        <Form.Item label="Subtitle" name="subTitle">
-          <Input placeholder="Enter product subtitle" />
-        </Form.Item>
-        <Form.Item label="Tags (comma-separated)" name="tags">
-          <Input placeholder="Enter tags (e.g., Broadway, entertainment)" />
-        </Form.Item>
-        <Form.Item label="Brief Description" name="briefDescription">
-          <TextArea rows={4} placeholder="Enter brief description" />
-        </Form.Item>
-        <Form.Item label="Full Description" name="fullDescription">
-          <TextArea rows={6} placeholder="Enter full description" />
-        </Form.Item>
-        <Form.Item label="Price" name="price" rules={[{ required: true, message: "Please enter the price" }]}>
-          <Input type="number" placeholder="Enter price" />
-        </Form.Item>
+      <div className={styles.mainLayout}>
+        <Sidebar />
+        <div className={styles.mainContent}>
 
-        {/* Highlights */}
-        <Form.Item label="Highlights">
-          <Space>
-            <Input
-              placeholder="Add highlight"
-              onPressEnter={(e) => {
-                addToList(setHighlights, e.target.value);
-                e.target.value = "";
-              }}
-            />
-            <Button onClick={() => setHighlights([])}>Clear</Button>
-          </Space>
-          <ul>
-            {highlights.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </Form.Item>
+          <div style={{
+            paddingLeft:'1vw'
+          }}>
+            <h1>{productId ? "Edit Product" : "Create Product"}</h1>
+            <Form form={form} onFinish={handleSubmit} layout="vertical">
+              {/* Basic Information */}
+              <Form.Item label="Title" name="title" rules={[{ required: true, message: "Please enter the title" }]}>
+                <Input placeholder="Enter product title" />
+              </Form.Item>
+              <Form.Item label="Subtitle" name="subTitle">
+                <Input placeholder="Enter product subtitle" />
+              </Form.Item>
+              <Form.Item label="Tags (comma-separated)" name="tags">
+                <Input placeholder="Enter tags (e.g., Broadway, entertainment)" />
+              </Form.Item>
+              <Form.Item label="Brief Description" name="briefDescription">
+                <TextArea rows={4} placeholder="Enter brief description" />
+              </Form.Item>
+              <Form.Item label="Full Description" name="fullDescription">
+                <TextArea rows={6} placeholder="Enter full description" />
+              </Form.Item>
+              <Form.Item label="Price" name="price" rules={[{ required: true, message: "Please enter the price" }]}>
+                <Input type="number" placeholder="Enter price" />
+              </Form.Item>
 
-        {/* Includes */}
-        <Form.Item label="Includes">
-          <Space>
-            <Input
-              placeholder="Add include"
-              onPressEnter={(e) => {
-                addToList(setIncludes, e.target.value);
-                e.target.value = "";
-              }}
-            />
-            <Button onClick={() => setIncludes([])}>Clear</Button>
-          </Space>
-          <ul>
-            {includes.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </Form.Item>
+              {/* Highlights */}
+              <Form.Item label="Highlights">
+                <Space>
+                  <Input
+                    placeholder="Add highlight"
+                    onPressEnter={(e) => {
+                      addToList(setHighlights, e.target.value);
+                      e.target.value = "";
+                    }}
+                  />
+                  <Button onClick={() => setHighlights([])}>Clear</Button>
+                </Space>
+                <ul>
+                  {highlights.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </Form.Item>
 
-        {/* Other Fields */}
-        <Form.Item label="Tour Duration" name="tourDuration">
-          <Input placeholder="Enter tour duration" />
-        </Form.Item>
-        <Form.Item label="Tour Language" name="tourLanguage">
-          <Input placeholder="Enter tour language" />
-        </Form.Item>
-        <Form.Item label="Pickup Option" name="pickupOption">
-          <Input placeholder="Enter pickup option" />
-        </Form.Item>
-        <Form.Item label="Group Size" name="groupSize">
-          <Input placeholder="Enter group size" />
-        </Form.Item>
-        <Form.Item label="Meeting Point" name="meetingPoint">
-          <Input placeholder="Enter meeting point" />
-        </Form.Item>
-        <Form.Item label="Latitude">
-          <Input placeholder="Enter latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
-        </Form.Item>
-        <Form.Item label="Longitude">
-          <Input placeholder="Enter longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
-        </Form.Item>
-        <Form.Item label="Category">
-          <Select
-            value={selectedCategory}
-            onChange={(value) => setSelectedCategory(value)}
-            placeholder="Select category"
-          >
-            <Option value="broadway">Broadway</Option>
-            <Option value="concert">Concert</Option>
-            <Option value="museum">Museum</Option>
-          </Select>
-        </Form.Item>
-        <Form.Item label="Tour Date">
-          <Input
-            type="date"
-            value={tourDate ? tourDate.format("YYYY-MM-DD") : ""}
-            onChange={(e) => setTourDate(dayjs(e.target.value))}
-          />
-        </Form.Item>
+              {/* Includes */}
+              <Form.Item label="Includes">
+                <Space>
+                  <Input
+                    placeholder="Add include"
+                    onPressEnter={(e) => {
+                      addToList(setIncludes, e.target.value);
+                      e.target.value = "";
+                    }}
+                  />
+                  <Button onClick={() => setIncludes([])}>Clear</Button>
+                </Space>
+                <ul>
+                  {includes.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </Form.Item>
 
-        <Button type="primary" htmlType="submit">
-          {productId ? "Update Product" : "Create Product"}
-        </Button>
-      </Form>
+              {/* Other Fields */}
+              <Form.Item label="Tour Duration" name="tourDuration">
+                <Input placeholder="Enter tour duration" />
+              </Form.Item>
+              <Form.Item label="Tour Language" name="tourLanguage">
+                <Input placeholder="Enter tour language" />
+              </Form.Item>
+              <Form.Item label="Pickup Option" name="pickupOption">
+                <Input placeholder="Enter pickup option" />
+              </Form.Item>
+              <Form.Item label="Group Size" name="groupSize">
+                <Input placeholder="Enter group size" />
+              </Form.Item>
+              <Form.Item label="Meeting Point" name="meetingPoint">
+                <Input placeholder="Enter meeting point" />
+              </Form.Item>
+              <Form.Item label="Latitude">
+                <Input placeholder="Enter latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
+              </Form.Item>
+              <Form.Item label="Longitude">
+                <Input placeholder="Enter longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
+              </Form.Item>
+              <Form.Item label="Category">
+                <Select
+                  value={selectedCategory}
+                  onChange={(value) => setSelectedCategory(value)}
+                  placeholder="Select category"
+                >
+                  <Option value="broadway">Broadway</Option>
+                  <Option value="concert">Concert</Option>
+                  <Option value="museum">Museum</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item label="Tour Date">
+                <Input
+                  type="date"
+                  value={tourDate ? tourDate.format("YYYY-MM-DD") : ""}
+                  onChange={(e) => setTourDate(dayjs(e.target.value))}
+                />
+              </Form.Item>
+
+              <Button type="primary" htmlType="submit">
+                {productId ? "Update Product" : "Create Product"}
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </div>
+
     </div>);
 };
 

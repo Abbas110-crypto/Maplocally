@@ -105,13 +105,13 @@ const Navbar = () => {
             <Link href="/Contact">{t('Contact')}</Link>
           </li>
           <li>
-            <Link href="/recently-viewed">{t('Recently viewed')}</Link>
+            <Link href="#">{t('Recently viewed')}</Link>
           </li>
           <li>
-            <Link href="/signup">{t('Signup')}</Link>
+            <Link href="admin/login">{t('Signup')}</Link>
           </li>
           <li>
-            <Link href="/login">
+            <Link href="admin/login">
               <Button className={styles.loginbtn}>{t('Login')}</Button>
             </Link>
           </li>

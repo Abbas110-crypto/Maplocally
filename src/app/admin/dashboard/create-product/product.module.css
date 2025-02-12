@@ -4,6 +4,9 @@
     margin: 3%;
     margin-top: 10%;
   }
+  .mainLayout {
+    display: flex;
+  }
   
   .formContainer {
     margin-top: 4%;

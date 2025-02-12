@@ -87,7 +87,7 @@ html {
 body {
   font-family: 'Mona Sans', sans-serif;
   overflow-x: hidden;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   background-color: white;
 }
 
@@ -113,6 +113,6 @@ body {
 
 @media screen and (min-width: 1920px) {
   body {
-    max-width: 1920px;
+    /* max-width: 1920px; */
   }
 }

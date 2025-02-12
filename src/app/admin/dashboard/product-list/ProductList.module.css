@@ -4,11 +4,12 @@
 }
 
 .mainContent {
-  margin-left: 260px;
+  margin-left: 20vw;
   padding: 20px;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
   width: 100%;
+
 }
 
 /* Header styling */
@@ -98,15 +99,23 @@
 
 /* Product info styling */
 .productInfo {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: left; */
+  .span{
+    margin: 0;
+    text-align: left;
+    bottom: 18px;
+    position: relative;
+    margin-left: 10px;
+  }
 }
 
 .productImage {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   border-radius: 5px;
+  margin-left: 0;
 }
 
 /* Action buttons styling */
@@ -147,6 +156,10 @@
 
 .deleteBtn:hover {
   background-color: #e53935;
+}
+.pagination{
+  margin-top: 10px;
+  max-width: 100px;
 }
 
 /* Responsive design */

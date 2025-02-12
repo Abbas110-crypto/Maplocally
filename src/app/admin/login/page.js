@@ -15,7 +15,7 @@ const Login = () => {
     setLoading(true);
     try {
       console.log(values);
-      const response = await api.post('/api/login', values);
+      const response = await api.post('/login', values);
       const { Token } = response.data;
 
       if (Token) {

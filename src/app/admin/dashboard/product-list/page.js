@@ -101,7 +101,7 @@ const ProductList = () => {
             className={styles.searchInput}
           />
           <button className={styles.addNewBtn} onClick={handleAddNew}>
-            Add New
+            + Add New
           </button>
         </div>
         <div className={styles.tableContainer}>
@@ -127,7 +127,7 @@ const ProductList = () => {
                           alt={product.title}
                           className={styles.productImage}
                         />
-                        <span>{product.title}</span>
+                        <span className={styles.span}>{product.title}</span>
                       </div>
                     </td>
                     <td className={styles.tableCell}>{product.category || "N/A"}</td>
