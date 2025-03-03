@@ -14,7 +14,7 @@ const Gallery = ({ id }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/api/get-product/${id}`);
+        const response = await axios.get(`https://maplocally-be.vercel.app/api/get-product/${id}`);
         console.log("Fetched Data:", response.data); // Debugging API response
         setData(response.data.data); // Access the "data" field from the API response
       } catch (error) {
